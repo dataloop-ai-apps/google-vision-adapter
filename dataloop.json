@@ -1,0 +1,181 @@
+{
+  "displayName": "google vision models",
+  "name": "google-vision-models",
+  "icon": "icon-dl-qa-sampling",
+  "components": {
+    "panels": [
+      {
+        "name": "objDetectionNodePanel",
+        "icon": "icon-dl-qa-sampling",
+        "supportedSlots": [
+          {
+            "type": "pipelineNodeConfig",
+            "configuration": {}
+          }
+        ],
+        "conditions": {
+          "resources": []
+        }
+      },
+      {
+        "name": "ocrNodePanel",
+        "icon": "icon-dl-qa-sampling",
+        "supportedSlots": [
+          {
+            "type": "pipelineNodeConfig",
+            "configuration": {}
+          }
+        ],
+        "conditions": {
+          "resources": []
+        }
+      }
+    ],
+    "pipelineNodes": [
+      {
+        "invoke": {
+          "type": "function",
+          "namespace": "googlevisionobjdetectionnode.google_vision_obj_det_module.obj_detection"
+        },
+        "categories": [
+          "image-utils"
+        ]
+      },
+      {
+        "invoke": {
+          "type": "function",
+          "namespace": "googlevisionocrnode.google_vision_ocr_module.text_detection"
+        },
+        "categories": [
+          "image-utils"
+        ]
+      }
+    ],
+    "modules": [
+      {
+        "name": "google_vision_obj_det_module",
+        "entryPoint": "objectDetection/obj_detection.py",
+        "className": "ServiceRunner",
+        "initInputs": [
+          {
+            "type": "String",
+            "name": "integration_name"
+          }
+        ],
+        "functions": [
+          {
+            "name": "obj_detection",
+            "description": "google vision object detection",
+            "input": [
+              {
+                "type": "Item",
+                "name": "item"
+              }
+            ],
+            "displayIcon": "qa-sampling",
+            "displayName": "google vision object detection"
+          }
+        ]
+      },
+      {
+        "name": "google_vision_ocr_module",
+        "entryPoint": "ocr/ocr_detection.py",
+        "className": "ServiceRunner",
+        "initInputs": [
+          {
+            "type": "String",
+            "name": "integration_name"
+          }
+        ],
+        "functions": [
+          {
+            "name": "text_detection",
+            "description": "google vision ocr detection",
+            "input": [
+              {
+                "type": "Item",
+                "name": "item"
+              }
+            ],
+            "displayIcon": "qa-sampling",
+            "displayName": "google vision ocr detection"
+          }
+        ]
+      }
+    ],
+    "services": [
+      {
+        "name": "googlevisionobjdetectionnode",
+        "versions": {
+          "dtlpy": "1.86.13"
+        },
+        "panelNames": [
+          "objDetectionNodePanel"
+        ],
+        "initParams": {
+          "integration_name": "google-vision-api"
+        },
+        "moduleName": "google_vision_obj_det_module",
+        "runtime": {
+          "podType": "regular-xs",
+          "runnerImage": "shadimahameeddl/vision-test:latest",
+          "numReplicas": 1,
+          "concurrency": 10,
+          "pyPackages": {},
+          "singleAgent": false,
+          "autoscaler": {
+            "type": "rabbitmq",
+            "minReplicas": 1,
+            "maxReplicas": 2,
+            "queueLength": 10
+          },
+          "preemptible": false
+        },
+        "executionTimeout": 3600,
+        "drainTime": 600,
+        "onReset": "failed",
+        "runExecutionAsProcess": false,
+        "secrets": [
+          "ce6295a3-293c-48dd-9e34-888a4c84a362"
+        ],
+        "maxAttempts": 3
+      },
+      {
+        "name": "googlevisionocrnode",
+        "versions": {
+          "dtlpy": "1.86.13"
+        },
+        "panelNames": [
+          "ocrNodePanel"
+        ],
+        "initParams": {
+          "integration_name": "google-vision-api"
+        },
+        "moduleName": "google_vision_ocr_module",
+        "runtime": {
+          "podType": "regular-xs",
+          "runnerImage": "shadimahameeddl/vision-test:latest",
+          "numReplicas": 1,
+          "concurrency": 10,
+          "pyPackages": {},
+          "singleAgent": false,
+          "autoscaler": {
+            "type": "rabbitmq",
+            "minReplicas": 1,
+            "maxReplicas": 2,
+            "queueLength": 10
+          },
+          "preemptible": false
+        },
+        "executionTimeout": 3600,
+        "drainTime": 600,
+        "onReset": "failed",
+        "runExecutionAsProcess": false,
+        "secrets": [
+          "ce6295a3-293c-48dd-9e34-888a4c84a362"
+        ],
+        "maxAttempts": 3
+      }
+    ]
+  }
+}
