@@ -23,7 +23,4 @@ class ServiceRunner(VisionBase):
         response = self.get_response(image, vision.Feature.Type.TEXT_DETECTION)
 
         builder = item.annotations.builder()
-        for annotation in response.text_annotations:
-            points = annotation.bounding_poly.vertices
-            self.add_box_annotation(builder, points[0].x, points[0].y, points[2].x, points[2].y, annotation.description)
-        item.annotations.upload(builder)
+        self.add_box_annotation(item, builder, response.text_annotations, "text")

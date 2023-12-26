@@ -61,22 +61,26 @@ class VisionBase(dl.BaseServiceRunner):
                                               features=[vision.Feature(type_=type)])
         return self.vision_client.annotate_image(request=request)
 
-    def add_box_annotation(self, builder: dl.AnnotationCollection, x1, y1, x2, y2, label):
+    def add_box_annotation(self, item: dl.Item, builder: dl.AnnotationCollection, annotations, vision_type):
         """
         Adds a box annotation to a given annotation builder.
 
         Args:
             item (dl.Item): The item to which the annotation is related.
             builder (dl.AnnotationCollection) : The annotation builder to which the box annotation will be added.
-            x1 (float): The x-coordinate of the top left corner of the box.
-            y1 (float): The y-coordinate of the top left corner of the box.
-            x2 (float): The x-coordinate of the bottom right corner of the box.
-            y2 (float): The y-coordinate of the bottom right corner of the box.
-            label (str): The label for the box annotation.
+            annotations : The annotations from the Google Vision API.
+            vision_type (str): The type of processing to perform on the image.
         """
         self.logger.info('Adding box annotation')
-        builder.add(annotation_definition=dl.Box(top=y1,
-                                                 left=x1,
-                                                 bottom=y2,
-                                                 right=x2,
-                                                 label=label))
+        for annotation in annotations:
+            if vision_type == 'text':
+                label = 'text'
+                description = annotation.description
+            else:
+                label = annotation.description
+                description = None
+
+            points = annotation.bounding_poly.vertices
+            builder.add(annotation_definition=dl.Box(left=max(points[0].x, 0), top=max(points[0].y, 0), bottom=min(points[2].y, item.height), right=min(points[2].x, item.width), label=label, description=description))
+        item.annotations.upload(builder)
+        self.logger.info('Box annotation added')

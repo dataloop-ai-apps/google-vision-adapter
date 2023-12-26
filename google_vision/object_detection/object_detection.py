@@ -33,5 +33,5 @@ class ServiceRunner(VisionBase):
             y1 = normalized_points[0].y * height
             x2 = normalized_points[2].x * width
             y2 = normalized_points[2].y * height
-            self.add_box_annotation(builder, x1, y1, x2, y2, object_.name)
+            builder.add(annotation_definition=dl.Box(left=x1, top=y1, right=x2, bottom=y2, label=object_.name))
         item.annotations.upload(builder)
