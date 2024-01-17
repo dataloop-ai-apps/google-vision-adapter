@@ -21,6 +21,7 @@ class ServiceRunner(VisionBase):
         self.logger.info('Detecting text')
         image = self.load_image(item)
         response = self.get_response(image, vision.Feature.Type.TEXT_DETECTION)
-
         builder = item.annotations.builder()
         self.add_box_annotation(item, builder, response.text_annotations, "text")
+
+        return item

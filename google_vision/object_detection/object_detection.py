@@ -12,7 +12,7 @@ class ServiceRunner(VisionBase):
 
     def obj_detection(self, item: dl.Item):
         """
-        Detects and annotates objects within an image.
+        Detects and annotates objects within an image. For classes please check: https://cloud.google.com/vision/docs/object-localizer
 
         Args:
             item (dl.Item): The item containing the image for object detection.
@@ -35,3 +35,5 @@ class ServiceRunner(VisionBase):
             y2 = normalized_points[2].y * height
             builder.add(annotation_definition=dl.Box(left=x1, top=y1, right=x2, bottom=y2, label=object_.name))
         item.annotations.upload(builder)
+
+        return item

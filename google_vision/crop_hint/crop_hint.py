@@ -39,7 +39,10 @@ class ServiceRunner(VisionBase):
 
         # Get the crop ratio from the context
         node = context.node
-        ratio = node.metadata['customNodeConfig']['ratio']
+        width = node.metadata['customNodeConfig']['width']
+        height = node.metadata['customNodeConfig']['height']
+        ratio = width / height
+        ratio = round(ratio, 2)
         self.logger.info(f'Using crop ratio: {ratio}')
 
         # Perform crop hint detection
@@ -51,7 +54,7 @@ class ServiceRunner(VisionBase):
         self.logger.info(f'Image cropped: {points[0].x}, {points[0].y}, {points[2].x}, {points[2].y}')
 
         # Save and upload the cropped image
-        crop_item = self._save_and_upload_cropped_image(cropped_image, item, ratio)
+        crop_item = self._save_and_upload_cropped_image(cropped_image, item, width, height)
         return crop_item
 
     def _get_crop_hints(self, content, ratio):
@@ -71,7 +74,7 @@ class ServiceRunner(VisionBase):
         response = self.vision_client.crop_hints(image=image, image_context=image_context)
         return response.crop_hints_annotation.crop_hints
 
-    def _save_and_upload_cropped_image(self, cropped_image, item, ratio):
+    def _save_and_upload_cropped_image(self, cropped_image, item, width, height):
         """
         Saves the cropped image and uploads it to Dataloop.
 
@@ -85,7 +88,7 @@ class ServiceRunner(VisionBase):
         """
         temp_items_path = tempfile.mkdtemp()
         name, ext = os.path.splitext(item.name)
-        cropped_image_path = f'{name}_cropped_{ratio}.jpg'
+        cropped_image_path = f'{name}_cropped_w_{width}_h_{height}.jpg'
         file_path = os.path.join(temp_items_path, cropped_image_path)
         cv2.imwrite(file_path, cropped_image)
         remote_path = '/'.join(item.filename.split('/')[:-1])

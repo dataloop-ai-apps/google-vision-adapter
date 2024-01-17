@@ -24,3 +24,5 @@ class ServiceRunner(VisionBase):
 
         builder = item.annotations.builder()
         self.add_box_annotation(item, builder, response.face_annotations, "face")
+
+        return item

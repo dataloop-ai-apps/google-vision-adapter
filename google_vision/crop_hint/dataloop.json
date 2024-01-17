@@ -1,0 +1,151 @@
+{
+  "displayName": "Google Vision Crop Hint",
+  "name": "google-vision-crop-hint",
+  "scope": "project",
+  "version": "v0.0.2",
+  "codebase": {
+    "type": "local",
+    "src_path": "/Users/ludovithorvath/Desktop/Repos/google-vision-adapter"
+  },
+  "components": {
+    "pipelineNodes": [
+      {
+        "invoke": {
+          "type": "function",
+          "namespace": "google-vision-crop-hint-v2.google_vision_crop_hint_v2.crop_hint"
+        },
+        "name": "Crop Hint",
+        "categories": ["Google Vision"],
+        "displayName": "Crop Hint",
+        "description": "Crop Image using hint from Google Vision based on ratio(width:height)",
+        "scope": "project",
+        "configuration": {
+          "fields": [
+            {
+              "name": "name",
+              "title": "Node Name",
+              "props": {
+                "title": true,
+                "type": "string",
+                "default": "Crop Hint",
+                "required": true,
+                "placeholder": "Insert node name"
+              },
+              "rules": [
+                {
+                  "type": "required",
+                  "effect": "error"
+                }
+              ],
+              "widget": "dl-input"
+            },
+            {
+              "name": "width",
+              "title": "Width Ratio",
+              "props": {
+                "title": true,
+                "type": "number",
+                "default": 1,
+                "required": true,
+                "placeholder": "Insert ratio"
+              },
+              "rules": [
+                {
+                  "type": "required",
+                  "effect": "error"
+                },
+                {
+                  "type": "gte",
+                  "value": 1e-7,
+                  "effect": "error",
+                  "errorMessage": "Ratio must be greater than 0"
+                }
+              ],
+              "widget": "dl-input"
+            },
+            {
+              "name": "height",
+              "title": "Height Ratio",
+              "props": {
+                "title": true,
+                "type": "number",
+                "default": 1,
+                "required": true,
+                "placeholder": "Insert ratio"
+              },
+              "rules": [
+                {
+                  "type": "required",
+                  "effect": "error"
+                },
+                {
+                  "type": "gte",
+                  "value": 1e-7,
+                  "effect": "error",
+                  "errorMessage": "Ratio must be greater than 0"
+                }
+              ],
+              "widget": "dl-input"
+            }
+          ]
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "google_vision_crop_hint_v2",
+        "entryPoint": "google_vision/crop_hint/crop_hint.py",
+        "className": "ServiceRunner",
+        "initInputs": [
+          {
+            "type": "String",
+            "name": "integration_name"
+          }
+        ],
+        "functions": [
+          {
+            "name": "crop_hint",
+            "input": [
+              {
+                "type": "Item",
+                "name": "item"
+              }
+            ],
+            "output": [
+              {
+                "type": "Item",
+                "name": "item"
+              }
+            ],
+            "displayIcon": "crop"
+          }
+        ]
+      }
+    ],
+    "services": [
+      {
+        "name": "google-vision-crop-hint-v2",
+        "moduleName": "google_vision_crop_hint_v2",
+        "initParams": {
+          "integration_name": "google-vision-ludo"
+        },
+        "secrets": [],
+        "runtime": {
+          "podType": "regular-xs",
+          "runnerImage": "ludohor/googlevisionadapter:latest",
+          "numReplicas": 1,
+          "concurrency": 10,
+          "singleAgent": false,
+          "autoscaler": {
+            "type": "rabbitmq",
+            "minReplicas": 1,
+            "maxReplicas": 2,
+            "queueLength": 10
+          },
+          "preemptible": false
+        },
+        "operation": "none"
+      }
+    ]
+  }
+}

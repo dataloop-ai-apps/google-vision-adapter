@@ -10,6 +10,8 @@ class ServiceRunner(VisionBase):
     Attributes:
         vision_client (vision.ImageAnnotatorClient): A client for interacting with the Google Vision API.
     """
+    # TODO value to be parameterized
+    # add bluring if label?
 
     def explicit_content_detection(self, item: dl.Item):
         """
@@ -28,3 +30,5 @@ class ServiceRunner(VisionBase):
             if value > 3:
                 builder.add(annotation_definition=dl.Classification(label=key))
         item.annotations.upload(builder)
+
+        return item

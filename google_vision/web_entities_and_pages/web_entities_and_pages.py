@@ -22,5 +22,10 @@ class ServiceRunner(VisionBase):
         image = self.load_image(item)
         response = self.vision_client.web_detection(image=image)
         annotations = vision.AnnotateImageResponse.to_dict(response)
-        item.metadata['google_vision_web_detection'] = annotations['web_detection']
+        if 'user' not in item.metadata:
+            item.metadata['user'] = {}
+        item.metadata['user']['google_vision_web_detection'] = annotations['web_detection']
         item.update()
+        # add to user metadata
+
+        return item

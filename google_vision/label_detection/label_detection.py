@@ -26,3 +26,5 @@ class ServiceRunner(VisionBase):
         for annotation in response.label_annotations:
             builder.add(annotation_definition=dl.Classification(label=annotation.description))
         item.annotations.upload(builder)
+
+        return item
