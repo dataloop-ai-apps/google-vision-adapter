@@ -1,0 +1,110 @@
+{
+  "displayName": "Google Vision Label Detection",
+  "name": "google-vision-label-detection",
+  "scope": "public",
+  "version": "v0.0.2",
+  "attributes": {
+    "Provider": "Google",
+    "Category": "Pipeline",
+    "Pipeline Type": "Node",
+    "Node Type": "Other"
+  },
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/google-vision-adapter.git",
+    "gitTag": "v0.0.2"
+  },
+  "components": {
+    "pipelineNodes": [
+      {
+        "invoke": {
+          "type": "function",
+          "namespace": "google-vision-label-detection-v2.google_vision_label_detection_v2.label_detection"
+        },
+        "name": "Label Detection",
+        "categories": ["Google Vision"],
+        "displayName": "Label Detection",
+        "description": "Detects labels for the image",
+        "scope": "project",
+        "configuration": {
+          "fields": [
+            {
+              "name": "name",
+              "title": "Node Name",
+              "props": {
+                "title": true,
+                "type": "string",
+                "default": "Label Detection",
+                "required": true,
+                "placeholder": "Insert node name"
+              },
+              "rules": [
+                {
+                  "type": "required",
+                  "effect": "error"
+                }
+              ],
+              "widget": "dl-input"
+            }
+          ]
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "google_vision_label_detection_v2",
+        "entryPoint": "google_vision/label_detection/label_detection.py",
+        "className": "ServiceRunner",
+        "initInputs": [
+          {
+            "type": "String",
+            "name": "integration_name"
+          }
+        ],
+        "functions": [
+          {
+            "name": "label_detection",
+            "input": [
+              {
+                "type": "Item",
+                "name": "item"
+              }
+            ],
+            "output": [
+              {
+                "type": "Item",
+                "name": "item"
+              }
+            ],
+            "displayIcon": "label"
+          }
+        ]
+      }
+    ],
+    "services": [
+      {
+        "name": "google-vision-label-detection-v2",
+        "moduleName": "google_vision_label_detection_v2",
+        "initParams": {
+          "integration_name": "google-vision-ludo"
+        },
+        "secrets": [],
+        "runtime": {
+          "podType": "regular-xs",
+          "runnerImage": "shadimahameeddl/vision-test:latest",
+          "numReplicas": 1,
+          "concurrency": 10,
+          "singleAgent": false,
+          "autoscaler": {
+            "type": "rabbitmq",
+            "minReplicas": 1,
+            "maxReplicas": 2,
+            "queueLength": 10
+          },
+          "preemptible": false
+        },
+        "operation": "none"
+      }
+    ]
+  }
+}
