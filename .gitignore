@@ -291,4 +291,5 @@ dataloop_scripts
 *.ipynb
 .venv
 .env
+.DS_Store
 .devcontainer/
