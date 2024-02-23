@@ -26,17 +26,13 @@ class VisionBase(dl.BaseServiceRunner):
         self.logger = logger
         self.logger.info('Initializing Google Vision API client')
         self.logger.info('Loading credentials from environment variable: {}'.format(integration_name))
-        credentials = os.environ.get(integration_name)
+        raw_credentials = os.environ.get(integration_name)
         try:
-            # for case of secret
-            credentials = json.loads(credentials)
+            credentials = json.loads(raw_credentials)
         except json.JSONDecodeError:
-            # for case of integration
-            logger.info(f"integration_name = {integration_name}")
-            credentials = base64.b64decode(credentials)
-            credentials = credentials.decode("utf-8")
-            credentials = json.loads(credentials)
-            credentials = json.loads(credentials['content'])
+            decoded_credentials = base64.b64decode(raw_credentials).decode("utf-8")
+            credentials_json = json.loads(decoded_credentials)
+            credentials = json.loads(credentials_json['content'])
 
         self.vision_client = vision.ImageAnnotatorClient.from_service_account_info(credentials)
 
