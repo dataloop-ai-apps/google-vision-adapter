@@ -1,8 +1,8 @@
 {
   "displayName": "Google Vision Object Detection",
   "name": "google-vision-object-detection",
-  "scope": "project",
-  "version": "v0.0.2",
+  "scope": "public",
+  "version": "0.0.2",
   "codebase": {
     "type": "local",
     "src_path": "/Users/ludovithorvath/Desktop/Repos/google-vision-adapter"
@@ -18,7 +18,7 @@
         "categories": ["Google Vision"],
         "displayName": "Object Detection",
         "description": "Detects objects in the image",
-        "scope": "project",
+        "scope": "public",
         "configuration": {
           "fields": [
             {

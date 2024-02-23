@@ -1,8 +1,8 @@
 {
   "displayName": "Google Vision Label Detection",
   "name": "google-vision-label-detection",
-  "scope": "project",
-  "version": "v0.0.1",
+  "scope": "public",
+  "version": "0.0.1",
   "codebase": {
     "type": "local",
     "src_path": "/Users/ludovithorvath/Desktop/Repos/google-vision-adapter"
@@ -18,7 +18,7 @@
         "categories": ["Google Vision"],
         "displayName": "Label Detection",
         "description": "Detects labels for the image",
-        "scope": "project",
+        "scope": "public",
         "configuration": {
           "fields": [
             {

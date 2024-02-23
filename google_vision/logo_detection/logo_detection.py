@@ -1,4 +1,4 @@
-from google_vision.base import VisionBase
+from google_vision.vision_api_handler import VisionBase
 import dtlpy as dl
 
 

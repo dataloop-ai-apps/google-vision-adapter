@@ -1,6 +1,6 @@
 import dtlpy as dl
 from google.cloud import vision
-from google_vision.base import VisionBase
+from google_vision.vision_api_handler import VisionBase
 
 
 class ServiceRunner(VisionBase):

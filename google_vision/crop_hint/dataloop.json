@@ -1,12 +1,8 @@
 {
   "displayName": "Google Vision Crop Hint",
   "name": "google-vision-crop-hint",
-  "scope": "project",
-  "version": "v0.0.2",
-  "codebase": {
-    "type": "local",
-    "src_path": "/Users/ludovithorvath/Desktop/Repos/google-vision-adapter"
-  },
+  "scope": "public",
+  "version": "0.0.2",
   "components": {
     "pipelineNodes": [
       {
@@ -18,7 +14,7 @@
         "categories": ["Google Vision"],
         "displayName": "Crop Hint",
         "description": "Crop Image using hint from Google Vision based on ratio(width:height)",
-        "scope": "project",
+        "scope": "public",
         "configuration": {
           "fields": [
             {

@@ -3,6 +3,7 @@ import os
 import dtlpy as dl
 from google.cloud import vision
 import logging
+import base64
 
 logger = logging.getLogger(name='google-vision')
 
@@ -26,7 +27,17 @@ class VisionBase(dl.BaseServiceRunner):
         self.logger.info('Initializing Google Vision API client')
         self.logger.info('Loading credentials from environment variable: {}'.format(integration_name))
         credentials = os.environ.get(integration_name)
-        credentials = json.loads(credentials)
+        try:
+            # for case of secret
+            credentials = json.loads(credentials)
+        except json.JSONDecodeError:
+            # for case of integration
+            logger.info(f"integration_name = {integration_name}")
+            credentials = base64.b64decode(credentials)
+            credentials = credentials.decode("utf-8")
+            credentials = json.loads(credentials)
+            credentials = json.loads(credentials['content'])
+
         self.vision_client = vision.ImageAnnotatorClient.from_service_account_info(credentials)
 
     def load_image(self, item):
