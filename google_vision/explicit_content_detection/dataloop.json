@@ -2,11 +2,7 @@
   "displayName": "Google Vision Explicit Content Detection",
   "name": "google-vision-exp-cont",
   "scope": "public",
-  "version": "0.0.1",
-  "codebase": {
-    "type": "local",
-    "src_path": "/Users/ludovithorvath/Desktop/Repos/google-vision-adapter"
-  },
+  "version": "0.0.3",
   "components": {
     "pipelineNodes": [
       {
