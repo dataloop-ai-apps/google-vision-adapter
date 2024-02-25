@@ -2,11 +2,11 @@
   "displayName": "Google Vision Explicit Content Detection",
   "name": "google-vision-exp-cont",
   "scope": "public",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/google-vision-adapter.git",
-    "gitTag": "0.0.12"
+    "gitTag": "0.0.13"
   },
   "components": {
     "pipelineNodes": [
