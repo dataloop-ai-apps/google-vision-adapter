@@ -1,8 +1,15 @@
 {
   "displayName": "Google Vision Crop Hint",
   "name": "google-vision-crop-hint",
+    "description": "Crop Hints suggests vertices for a crop region on an image.",
   "scope": "public",
   "version": "0.0.13",
+  "attributes": {
+    "Provider": "Google",
+    "Category": "Pipeline",
+    "Pipeline Type": "Node",
+    "Node Type": "Models"
+  },
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/google-vision-adapter.git",

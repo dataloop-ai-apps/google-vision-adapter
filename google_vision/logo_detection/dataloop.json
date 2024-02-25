@@ -1,8 +1,15 @@
 {
   "displayName": "Google Vision Logo Detection",
   "name": "google-vision-logo-detection",
+  "description": "Logo Detection detects popular product logos within an image.\n\n",
   "scope": "public",
   "version": "0.0.13",
+  "attributes": {
+    "Provider": "Google",
+    "Category": "Pipeline",
+    "Pipeline Type": "Node",
+    "Node Type": "Models"
+  },
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/google-vision-adapter.git",
