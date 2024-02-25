@@ -3,6 +3,11 @@
   "name": "google-vision-web-detection",
   "scope": "public",
   "version": "0.0.3",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/google-vision-adapter.git",
+    "gitTag": "0.0.3"
+  },
   "components": {
     "pipelineNodes": [
       {
@@ -11,7 +16,9 @@
           "namespace": "google-vision-web-detection-v2.google_vision_web_detection_v2.web_detection"
         },
         "name": "Web Content Detection",
-        "categories": ["Google Vision"],
+        "categories": [
+          "Google Vision"
+        ],
         "displayName": "Web Content Detection",
         "description": "Detects web content in the image",
         "scope": "public",
