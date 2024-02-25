@@ -2,11 +2,11 @@
   "displayName": "Google Vision Text Detection",
   "name": "google-vision-text-detection",
   "scope": "public",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/google-vision-adapter.git",
-    "gitTag": "0.0.6"
+    "gitTag": "0.0.7"
   },
   "components": {
     "pipelineNodes": [
