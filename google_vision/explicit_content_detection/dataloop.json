@@ -20,7 +20,7 @@
       {
         "invoke": {
           "type": "function",
-          "namespace": "google-vision-explicit-detection-v2.google_vision_explicit_detection_v2.explicit_content_detection"
+          "namespace": "google-vision-explicit-detection.google_vision_explicit_detection.explicit_content_detection"
         },
         "name": "Explicit Content Detection",
         "categories": [
@@ -55,7 +55,7 @@
     ],
     "modules": [
       {
-        "name": "google_vision_explicit_detection_v2",
+        "name": "google_vision_explicit_detection",
         "entryPoint": "google_vision/explicit_content_detection/explicit_content_detection.py",
         "className": "ServiceRunner",
         "initInputs": [
@@ -86,10 +86,10 @@
     ],
     "services": [
       {
-        "name": "google-vision-explicit-detection-v2",
-        "moduleName": "google_vision_explicit_detection_v2",
+        "name": "google-vision-explicit-detection",
+        "moduleName": "google_vision_explicit_detection",
         "initParams": {
-          "integration_name": "google-vision-ludo"
+          "integration_name": ""
         },
         "secrets": [],
         "runtime": {

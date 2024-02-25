@@ -20,7 +20,7 @@
       {
         "invoke": {
           "type": "function",
-          "namespace": "google-vision-logo-detection-v2.google_vision_logo_detection_v2.logo_detection"
+          "namespace": "google-vision-logo-detection.google_vision_logo_detection.logo_detection"
         },
         "name": "Logo Detection",
         "categories": [
@@ -55,7 +55,7 @@
     ],
     "modules": [
       {
-        "name": "google_vision_logo_detection_v2",
+        "name": "google_vision_logo_detection",
         "entryPoint": "google_vision/logo_detection/logo_detection.py",
         "className": "ServiceRunner",
         "initInputs": [
@@ -86,10 +86,10 @@
     ],
     "services": [
       {
-        "name": "google-vision-logo-detection-v2",
-        "moduleName": "google_vision_logo_detection_v2",
+        "name": "google-vision-logo-detection",
+        "moduleName": "google_vision_logo_detection",
         "initParams": {
-          "integration_name": "google-vision-ludo"
+          "integration_name": ""
         },
         "secrets": [],
         "runtime": {

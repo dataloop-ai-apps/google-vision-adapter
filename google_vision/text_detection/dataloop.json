@@ -20,7 +20,7 @@
       {
         "invoke": {
           "type": "function",
-          "namespace": "google-vision-text-detection-v2.google_vision_text_detection_v2.text_detection"
+          "namespace": "google-vision-text-detection.google_vision_text_detection.text_detection"
         },
         "name": "Text Detection",
         "categories": [
@@ -55,7 +55,7 @@
     ],
     "modules": [
       {
-        "name": "google_vision_text_detection_v2",
+        "name": "google_vision_text_detection",
         "entryPoint": "google_vision/text_detection/text_detection.py",
         "className": "ServiceRunner",
         "initInputs": [
@@ -86,10 +86,10 @@
     ],
     "services": [
       {
-        "name": "google-vision-text-detection-v2",
-        "moduleName": "google_vision_text_detection_v2",
+        "name": "google-vision-text-detection",
+        "moduleName": "google_vision_text_detection",
         "initParams": {
-          "integration_name": "google-vision-ludo"
+          "integration_name": ""
         },
         "secrets": [],
         "runtime": {

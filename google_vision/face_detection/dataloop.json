@@ -20,7 +20,7 @@
       {
         "invoke": {
           "type": "function",
-          "namespace": "google-vision-face-detection-v2.google_vision_face_detection_v2.face_detection"
+          "namespace": "google-vision-face-detection.google_vision_face_detection.face_detection"
         },
         "name": "Face Detection",
         "categories": [
@@ -55,7 +55,7 @@
     ],
     "modules": [
       {
-        "name": "google_vision_face_detection_v2",
+        "name": "google_vision_face_detection",
         "entryPoint": "google_vision/face_detection/face_detection.py",
         "className": "ServiceRunner",
         "initInputs": [
@@ -86,10 +86,10 @@
     ],
     "services": [
       {
-        "name": "google-vision-face-detection-v2",
-        "moduleName": "google_vision_face_detection_v2",
+        "name": "google-vision-face-detection",
+        "moduleName": "google_vision_face_detection",
         "initParams": {
-          "integration_name": "google-vision-ludo"
+          "integration_name": ""
         },
         "secrets": [],
         "runtime": {

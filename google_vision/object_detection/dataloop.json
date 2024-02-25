@@ -20,7 +20,7 @@
       {
         "invoke": {
           "type": "function",
-          "namespace": "google-vision-object-detection-v2.google_vision_object_detection_v2.obj_detection"
+          "namespace": "google-vision-object-detection.google_vision_object_detection.obj_detection"
         },
         "name": "Object Detection",
         "categories": [
@@ -55,7 +55,7 @@
     ],
     "modules": [
       {
-        "name": "google_vision_object_detection_v2",
+        "name": "google_vision_object_detection",
         "entryPoint": "google_vision/object_detection/object_detection.py",
         "className": "ServiceRunner",
         "initInputs": [
@@ -86,10 +86,10 @@
     ],
     "services": [
       {
-        "name": "google-vision-object-detection-v2",
-        "moduleName": "google_vision_object_detection_v2",
+        "name": "google-vision-object-detection",
+        "moduleName": "google_vision_object_detection",
         "initParams": {
-          "integration_name": "google-vision-ludo"
+          "integration_name": ""
         },
         "runtime": {
           "podType": "regular-xs",

@@ -20,7 +20,7 @@
       {
         "invoke": {
           "type": "function",
-          "namespace": "google-vision-web-detection-v2.google_vision_web_detection_v2.web_detection"
+          "namespace": "google-vision-web-detection.google_vision_web_detection.web_detection"
         },
         "name": "Web Content Detection",
         "categories": [
@@ -55,7 +55,7 @@
     ],
     "modules": [
       {
-        "name": "google_vision_web_detection_v2",
+        "name": "google_vision_web_detection",
         "entryPoint": "google_vision/web_entities_and_pages/web_entities_and_pages.py",
         "className": "ServiceRunner",
         "initInputs": [
@@ -86,10 +86,10 @@
     ],
     "services": [
       {
-        "name": "google-vision-web-detection-v2",
-        "moduleName": "google_vision_web_detection_v2",
+        "name": "google-vision-web-detection",
+        "moduleName": "google_vision_web_detection",
         "initParams": {
-          "integration_name": "google-vision-ludo"
+          "integration_name": ""
         },
         "secrets": [],
         "runtime": {

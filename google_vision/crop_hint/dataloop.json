@@ -20,7 +20,7 @@
       {
         "invoke": {
           "type": "function",
-          "namespace": "google-vision-crop-hint-v2.google_vision_crop_hint_v2.crop_hint"
+          "namespace": "google-vision-crop-hint.google_vision_crop_hint.crop_hint"
         },
         "name": "Crop Hint",
         "categories": [
@@ -103,7 +103,7 @@
     ],
     "modules": [
       {
-        "name": "google_vision_crop_hint_v2",
+        "name": "google_vision_crop_hint",
         "entryPoint": "google_vision/crop_hint/crop_hint.py",
         "className": "ServiceRunner",
         "initInputs": [
@@ -134,10 +134,10 @@
     ],
     "services": [
       {
-        "name": "google-vision-crop-hint-v2",
-        "moduleName": "google_vision_crop_hint_v2",
+        "name": "google-vision-crop-hint",
+        "moduleName": "google_vision_crop_hint",
         "initParams": {
-          "integration_name": "google-vision-ludo"
+          "integration_name": ""
         },
         "secrets": [],
         "runtime": {
