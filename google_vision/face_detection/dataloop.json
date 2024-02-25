@@ -2,11 +2,11 @@
   "displayName": "Google Vision Face Detection",
   "name": "google-vision-face-detection",
   "scope": "public",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/google-vision-adapter.git",
-    "gitTag": "0.0.9"
+    "gitTag": "0.0.10"
   },
   "components": {
     "pipelineNodes": [
