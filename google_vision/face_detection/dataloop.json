@@ -3,7 +3,7 @@
   "name": "google-vision-face-detection",
   "description": "Face Detection detects multiple faces within an image along with the associated key facial attributes such as emotional state or wearing head wear",
   "scope": "public",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "attributes": {
     "Provider": "Google",
     "Category": "Pipeline",
@@ -13,7 +13,7 @@
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/google-vision-adapter.git",
-    "gitTag": "0.0.13"
+    "gitTag": "0.0.14"
   },
   "components": {
     "pipelineNodes": [
