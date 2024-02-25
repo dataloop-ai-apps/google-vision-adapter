@@ -2,11 +2,11 @@
   "displayName": "Google Vision Crop Hint",
   "name": "google-vision-crop-hint",
   "scope": "public",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/google-vision-adapter.git",
-    "gitTag": "0.0.4"
+    "gitTag": "0.0.5"
   },
   "components": {
     "pipelineNodes": [
