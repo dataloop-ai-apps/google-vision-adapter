@@ -2,11 +2,11 @@
   "displayName": "Google Vision Logo Detection",
   "name": "google-vision-logo-detection",
   "scope": "public",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/google-vision-adapter.git",
-    "gitTag": "0.0.3"
+    "gitTag": "0.0.4"
   },
   "components": {
     "pipelineNodes": [
