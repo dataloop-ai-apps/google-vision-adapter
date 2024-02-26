@@ -142,7 +142,7 @@
         "secrets": [],
         "runtime": {
           "podType": "regular-xs",
-          "runnerImage": "ludohor/googlevisionadapter:latest",
+          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/google_vision:0.4.0",
           "numReplicas": 1,
           "concurrency": 10,
           "singleAgent": false,
