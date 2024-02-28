@@ -1,7 +1,7 @@
 {
   "displayName": "Google Vision Crop Hint",
   "name": "google-vision-crop-hint",
-    "description": "Crop Hints suggests vertices for a crop region on an image,  Requires GCS Integration in Dataloop, Refer to Data Governance for more information",
+  "description": "Crop Hints suggests vertices for a crop region on an image,  Requires GCS Integration in Dataloop, Refer to Data Governance for more information",
   "scope": "public",
   "version": "0.0.14",
   "attributes": {
@@ -23,9 +23,7 @@
           "namespace": "google-vision-crop-hint.google_vision_crop_hint.crop_hint"
         },
         "name": "Crop Hint",
-        "categories": [
-          "Google Vision"
-        ],
+        "categories": ["Google Vision"],
         "displayName": "Crop Hint",
         "description": "Crop Image using hint from Google Vision based on ratio(width:height)",
         "scope": "public",
@@ -148,7 +146,7 @@
           "singleAgent": false,
           "autoscaler": {
             "type": "rabbitmq",
-            "minReplicas": 1,
+            "minReplicas": 0,
             "maxReplicas": 2,
             "queueLength": 10
           },
