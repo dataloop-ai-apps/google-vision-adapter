@@ -26,7 +26,7 @@
         "categories": ["Google Vision"],
         "displayName": "Text Detection",
         "description": "Detects text in the image",
-        "scope": "public",
+        "scope": "node",
         "configuration": {
           "fields": [
             {

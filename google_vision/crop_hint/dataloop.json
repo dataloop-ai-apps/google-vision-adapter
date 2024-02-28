@@ -26,7 +26,7 @@
         "categories": ["Google Vision"],
         "displayName": "Crop Hint",
         "description": "Crop Image using hint from Google Vision based on ratio(width:height)",
-        "scope": "public",
+        "scope": "node",
         "configuration": {
           "fields": [
             {

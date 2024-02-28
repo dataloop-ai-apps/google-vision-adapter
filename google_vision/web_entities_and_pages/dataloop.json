@@ -26,7 +26,7 @@
         "categories": ["Google Vision"],
         "displayName": "Web Content Detection",
         "description": "Detects web content in the image",
-        "scope": "public",
+        "scope": "node",
         "configuration": {
           "fields": [
             {
