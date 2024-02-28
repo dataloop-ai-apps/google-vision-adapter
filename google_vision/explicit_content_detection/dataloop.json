@@ -1,7 +1,7 @@
 {
   "displayName": "Google Vision Explicit Content Detection",
   "name": "google-vision-exp-cont",
-  "description": "SafeSearch Detection detects explicit content such as adult content or violent content within an image. This feature uses five categories (adult, spoof, medical, violence, and racy) and returns the likelihood that each is present in a given image.",
+  "description": "SafeSearch Detection detects explicit content such as adult content or violent content within an image. This feature uses five categories (adult, spoof, medical, violence, and racy) and returns the likelihood that each is present in a given image. Requires GCS Integration in Dataloop, Refer to Data Governance for more information",
   "scope": "public",
   "version": "0.0.14",
   "attributes": {

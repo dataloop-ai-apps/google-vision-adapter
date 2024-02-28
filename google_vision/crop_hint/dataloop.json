@@ -1,7 +1,7 @@
 {
   "displayName": "Google Vision Crop Hint",
   "name": "google-vision-crop-hint",
-    "description": "Crop Hints suggests vertices for a crop region on an image.",
+    "description": "Crop Hints suggests vertices for a crop region on an image,  Requires GCS Integration in Dataloop, Refer to Data Governance for more information",
   "scope": "public",
   "version": "0.0.14",
   "attributes": {

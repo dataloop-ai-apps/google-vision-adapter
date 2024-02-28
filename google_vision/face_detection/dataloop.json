@@ -1,7 +1,7 @@
 {
   "displayName": "Google Vision Face Detection",
   "name": "google-vision-face-detection",
-  "description": "Face Detection detects multiple faces within an image along with the associated key facial attributes such as emotional state or wearing head wear",
+  "description": "Face Detection detects multiple faces within an image along with the associated key facial attributes such as emotional state or wearing head wear.  Requires GCS Integration in Dataloop, Refer to Data Governance for more information",
   "scope": "public",
   "version": "0.0.14",
   "attributes": {

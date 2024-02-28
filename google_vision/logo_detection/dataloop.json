@@ -1,7 +1,7 @@
 {
   "displayName": "Google Vision Logo Detection",
   "name": "google-vision-logo-detection",
-  "description": "Logo Detection detects popular product logos within an image.\n\n",
+  "description": "Logo Detection detects popular product logos within an image.  Requires GCS Integration in Dataloop, Refer to Data Governance for more information",
   "scope": "public",
   "version": "0.0.14",
   "attributes": {

@@ -1,7 +1,7 @@
 {
   "displayName": "Google Vision Web Detection",
   "name": "google-vision-web-detection",
-  "description": "Web Detection detects Web references to an image.",
+  "description": "Web Detection detects Web references to an image. Requires GCS Integration in Dataloop, Refer to Data Governance for more information",
   "scope": "public",
   "version": "0.0.14",
   "attributes": {

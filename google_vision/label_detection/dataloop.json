@@ -1,7 +1,7 @@
 {
   "displayName": "Google Vision Label Detection",
   "name": "google-vision-label-detection",
-  "description": "Label Detection can detect and extract information about entities in an image, across a broad group of categories.",
+  "description": "Label Detection can detect and extract information about entities in an image, across a broad group of categories.  Requires GCS Integration in Dataloop, Refer to Data Governance for more information",
   "scope": "public",
   "version": "0.0.14",
   "attributes": {

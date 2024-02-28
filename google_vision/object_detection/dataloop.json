@@ -1,7 +1,7 @@
 {
   "displayName": "Google Vision Object Detection",
   "name": "google-vision-object-detection",
-  "description": "The Vision API can detect and extract multiple objects in an image with Object Localization.",
+  "description": "The Vision API can detect and extract multiple objects in an image with Object Localization.  Requires GCS Integration in Dataloop, Refer to Data Governance for more information",
   "scope": "public",
   "version": "0.0.14",
   "attributes": {
