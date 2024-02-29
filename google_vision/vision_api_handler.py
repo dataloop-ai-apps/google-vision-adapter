@@ -26,6 +26,7 @@ class VisionBase(dl.BaseServiceRunner):
         self.logger = logger
         self.logger.info('Initializing Google Vision API client')
         self.logger.info('Loading credentials from environment variable: {}'.format(integration_name))
+        integration_name = integration_name.replace('-', '_')
         raw_credentials = os.environ.get(integration_name)
         try:
             credentials = json.loads(raw_credentials)
@@ -83,6 +84,9 @@ class VisionBase(dl.BaseServiceRunner):
             if vision_type == 'text':
                 label = 'text'
                 description = annotation.description
+            elif vision_type == 'face':
+                label = 'face'
+                description = None
             else:
                 label = annotation.description
                 description = None
