@@ -3,7 +3,7 @@
   "name": "google-vision-exp-cont",
   "description": "SafeSearch Detection detects explicit content such as adult content or violent content within an image. This feature uses five categories (adult, spoof, medical, violence, and racy) and returns the likelihood that each is present in a given image. Requires GCS Integration in Dataloop, Refer to Data Governance for more information",
   "scope": "public",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "attributes": {
     "Provider": "Google",
     "Category": "Pipeline",
@@ -13,7 +13,7 @@
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/google-vision-adapter.git",
-    "gitTag": "0.1.0"
+    "gitTag": "0.1.1"
   },
   "components": {
     "pipelineNodes": [
