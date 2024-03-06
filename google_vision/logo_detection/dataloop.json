@@ -3,7 +3,7 @@
   "name": "google-vision-logo-detection",
   "description": "Logo Detection detects popular product logos within an image.  Requires GCS Integration in Dataloop, Refer to Data Governance for more information",
   "scope": "public",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "attributes": {
     "Provider": "Google",
     "Category": "Pipeline",
@@ -13,7 +13,7 @@
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/google-vision-adapter.git",
-    "gitTag": "0.1.1"
+    "gitTag": "0.1.2"
   },
   "components": {
     "pipelineNodes": [
