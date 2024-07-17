@@ -7,9 +7,8 @@
   "attributes": {
     "Provider": "Google",
     "Category": "Application",
-    "Application Type": [
-      "Pipeline Node"
-    ]
+    "Media Type": ["Image"],
+    "Application Type": ["Pipeline Node"]
   },
   "codebase": {
     "type": "git",
@@ -24,9 +23,7 @@
           "namespace": "google-vision-text-detection.google_vision_text_detection.text_detection"
         },
         "name": "Text Detection",
-        "categories": [
-          "Google Vision"
-        ],
+        "categories": ["Google Vision"],
         "displayName": "Text Detection",
         "description": "Detects text in the image",
         "scope": "node",

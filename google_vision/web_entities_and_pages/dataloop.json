@@ -7,9 +7,8 @@
   "attributes": {
     "Provider": "Google",
     "Category": "Application",
-    "Application Type": [
-      "Pipeline Node"
-    ]
+    "Media Type": ["Image"],
+    "Application Type": ["Pipeline Node"]
   },
   "codebase": {
     "type": "git",
@@ -24,9 +23,7 @@
           "namespace": "google-vision-web-detection.google_vision_web_detection.web_detection"
         },
         "name": "Web Content Detection",
-        "categories": [
-          "Google Vision"
-        ],
+        "categories": ["Google Vision"],
         "displayName": "Web Content Detection",
         "description": "Detects web content in the image",
         "scope": "node",

@@ -7,9 +7,8 @@
   "attributes": {
     "Provider": "Google",
     "Category": "Application",
-    "Application Type": [
-      "Pipeline Node"
-    ]
+    "Media Type": ["Image"],
+    "Application Type": ["Pipeline Node"]
   },
   "codebase": {
     "type": "git",
@@ -24,9 +23,7 @@
           "namespace": "google-vision-crop-hint.google_vision_crop_hint.crop_hint"
         },
         "name": "Crop Hint",
-        "categories": [
-          "Google Vision"
-        ],
+        "categories": ["Google Vision"],
         "displayName": "Crop Hint",
         "description": "Crop Image using hint from Google Vision based on ratio(width:height)",
         "scope": "node",
@@ -67,7 +64,7 @@
                 },
                 {
                   "type": "gte",
-                  "value": 1e-07,
+                  "value": 1e-7,
                   "effect": "error",
                   "errorMessage": "Ratio must be greater than 0"
                 }
@@ -91,7 +88,7 @@
                 },
                 {
                   "type": "gte",
-                  "value": 1e-07,
+                  "value": 1e-7,
                   "effect": "error",
                   "errorMessage": "Ratio must be greater than 0"
                 }
