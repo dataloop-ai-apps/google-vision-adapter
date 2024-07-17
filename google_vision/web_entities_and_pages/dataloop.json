@@ -6,9 +6,10 @@
   "version": "0.1.2",
   "attributes": {
     "Provider": "Google",
-    "Category": "Pipeline",
-    "Pipeline Type": "Node",
-    "Node Type": "Models"
+    "Category": "Application",
+    "Application Type": [
+      "Pipeline Node"
+    ]
   },
   "codebase": {
     "type": "git",
