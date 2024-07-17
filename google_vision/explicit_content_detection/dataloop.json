@@ -6,9 +6,10 @@
   "version": "0.1.2",
   "attributes": {
     "Provider": "Google",
-    "Category": "Pipeline",
-    "Pipeline Type": "Node",
-    "Node Type": "Models"
+    "Category": "Application",
+    "Application Type": [
+      "Pipeline Node"
+    ]
   },
   "codebase": {
     "type": "git",
@@ -23,7 +24,9 @@
           "namespace": "google-vision-explicit-detection.google_vision_explicit_detection.explicit_content_detection"
         },
         "name": "Explicit Content Detection",
-        "categories": ["Google Vision"],
+        "categories": [
+          "Google Vision"
+        ],
         "displayName": "Explicit Content Detection",
         "description": "Detects content in the image",
         "scope": "node",

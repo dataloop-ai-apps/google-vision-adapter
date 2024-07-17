@@ -6,9 +6,10 @@
   "version": "0.1.2",
   "attributes": {
     "Provider": "Google",
-    "Category": "Pipeline",
-    "Pipeline Type": "Node",
-    "Node Type": "Models"
+    "Category": "Application",
+    "Application Type": [
+      "Pipeline Node"
+    ]
   },
   "codebase": {
     "type": "git",
@@ -23,7 +24,9 @@
           "namespace": "google-vision-face-detection.google_vision_face_detection.face_detection"
         },
         "name": "Face Detection",
-        "categories": ["Google Vision"],
+        "categories": [
+          "Google Vision"
+        ],
         "displayName": "Face Detection",
         "description": "Detects faces in the image",
         "scope": "node",
