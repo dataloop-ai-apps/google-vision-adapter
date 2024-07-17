@@ -23,7 +23,9 @@
           "namespace": "google-vision-text-detection.google_vision_text_detection.text_detection"
         },
         "name": "Text Detection",
-        "categories": ["Google Vision"],
+        "categories": [
+          "Google Vision"
+        ],
         "displayName": "Text Detection",
         "description": "Detects text in the image",
         "scope": "node",
@@ -77,7 +79,7 @@
                 "name": "item"
               }
             ],
-            "displayIcon": "text"
+            "displayIcon": "icon-dl-text-detection"
           }
         ]
       }

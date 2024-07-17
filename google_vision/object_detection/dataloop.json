@@ -23,7 +23,9 @@
           "namespace": "google-vision-object-detection.google_vision_object_detection.obj_detection"
         },
         "name": "Object Detection",
-        "categories": ["Google Vision"],
+        "categories": [
+          "Google Vision"
+        ],
         "displayName": "Object Detection",
         "description": "Detects objects in the image",
         "scope": "node",
@@ -77,7 +79,7 @@
                 "name": "item"
               }
             ],
-            "displayIcon": "box"
+            "displayIcon": "icon-dl-object-detection"
           }
         ]
       }

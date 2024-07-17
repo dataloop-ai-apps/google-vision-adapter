@@ -23,7 +23,9 @@
           "namespace": "google-vision-label-detection.google_vision_label_detection.label_detection"
         },
         "name": "Label Detection",
-        "categories": ["Google Vision"],
+        "categories": [
+          "Google Vision"
+        ],
         "displayName": "Label Detection",
         "description": "Detects labels for the image",
         "scope": "node",
@@ -77,7 +79,7 @@
                 "name": "item"
               }
             ],
-            "displayIcon": "label"
+            "displayIcon": "icon-dl-label-filled"
           }
         ]
       }

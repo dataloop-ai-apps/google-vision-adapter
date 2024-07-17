@@ -23,7 +23,9 @@
           "namespace": "google-vision-explicit-detection.google_vision_explicit_detection.explicit_content_detection"
         },
         "name": "Explicit Content Detection",
-        "categories": ["Google Vision"],
+        "categories": [
+          "Google Vision"
+        ],
         "displayName": "Explicit Content Detection",
         "description": "Detects content in the image",
         "scope": "node",
@@ -77,7 +79,7 @@
                 "name": "item"
               }
             ],
-            "displayIcon": "critical"
+            "displayIcon": "icon-dl-critical"
           }
         ]
       }
