@@ -23,7 +23,9 @@
           "namespace": "google-vision-logo-detection.google_vision_logo_detection.logo_detection"
         },
         "name": "Logo Detection",
-        "categories": ["Google Vision"],
+        "categories": [
+          "Google Vision"
+        ],
         "displayName": "Logo Detection",
         "description": "Detects logos in the image",
         "scope": "node",
@@ -77,7 +79,7 @@
                 "name": "item"
               }
             ],
-            "displayIcon": "dataloop"
+            "displayIcon": "icon-dl-logo-detection"
           }
         ]
       }

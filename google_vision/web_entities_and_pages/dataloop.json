@@ -23,7 +23,9 @@
           "namespace": "google-vision-web-detection.google_vision_web_detection.web_detection"
         },
         "name": "Web Content Detection",
-        "categories": ["Google Vision"],
+        "categories": [
+          "Google Vision"
+        ],
         "displayName": "Web Content Detection",
         "description": "Detects web content in the image",
         "scope": "node",
@@ -77,7 +79,7 @@
                 "name": "item"
               }
             ],
-            "displayIcon": "analytics"
+            "displayIcon": "icon-dl-web-detection"
           }
         ]
       }
