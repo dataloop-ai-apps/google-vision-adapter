@@ -24,10 +24,10 @@
           "namespace": "google-vision-explicit-detection.google_vision_explicit_detection.explicit_content_detection"
         },
         "name": "Explicit Content Detection",
-        "categories": ["Google Vision"],
+        "categories": ["image-utils"],
         "displayName": "Explicit Content Detection",
         "description": "Detects content in the image",
-        "scope": "node",
+        "scope": "project",
         "configuration": {
           "fields": [
             {
@@ -57,11 +57,8 @@
         "name": "google_vision_explicit_detection",
         "entryPoint": "google_vision/explicit_content_detection/explicit_content_detection.py",
         "className": "ServiceRunner",
-        "initInputs": [
-          {
-            "type": "String",
-            "name": "integration_name"
-          }
+        "integrations": [
+          "dl-gcp-service-account"
         ],
         "functions": [
           {
@@ -87,9 +84,6 @@
       {
         "name": "google-vision-explicit-detection",
         "moduleName": "google_vision_explicit_detection",
-        "initParams": {
-          "integration_name": ""
-        },
         "secrets": [],
         "runtime": {
           "podType": "regular-xs",

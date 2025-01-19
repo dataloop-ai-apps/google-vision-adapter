@@ -24,10 +24,10 @@
           "namespace": "google-vision-crop-hint.google_vision_crop_hint.crop_hint"
         },
         "name": "Crop Hint",
-        "categories": ["Google Vision"],
+        "categories": ["image-utils"],
         "displayName": "Crop Hint",
         "description": "Crop Image using hint from Google Vision based on ratio(width:height)",
-        "scope": "node",
+        "scope": "project",
         "configuration": {
           "fields": [
             {
@@ -105,11 +105,8 @@
         "name": "google_vision_crop_hint",
         "entryPoint": "google_vision/crop_hint/crop_hint.py",
         "className": "ServiceRunner",
-        "initInputs": [
-          {
-            "type": "String",
-            "name": "integration_name"
-          }
+        "integrations": [
+          "dl-gcp-service-account"
         ],
         "functions": [
           {
@@ -135,9 +132,6 @@
       {
         "name": "google-vision-crop-hint",
         "moduleName": "google_vision_crop_hint",
-        "initParams": {
-          "integration_name": ""
-        },
         "secrets": [],
         "runtime": {
           "podType": "regular-xs",

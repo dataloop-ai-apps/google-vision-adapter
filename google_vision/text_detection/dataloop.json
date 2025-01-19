@@ -24,10 +24,10 @@
           "namespace": "google-vision-text-detection.google_vision_text_detection.text_detection"
         },
         "name": "Text Detection",
-        "categories": ["Google Vision"],
+        "categories": ["image-utils"],
         "displayName": "Text Detection",
         "description": "Detects text in the image",
-        "scope": "node",
+        "scope": "project",
         "configuration": {
           "fields": [
             {
@@ -57,11 +57,8 @@
         "name": "google_vision_text_detection",
         "entryPoint": "google_vision/text_detection/text_detection.py",
         "className": "ServiceRunner",
-        "initInputs": [
-          {
-            "type": "String",
-            "name": "integration_name"
-          }
+        "integrations": [
+          "dl-gcp-service-account"
         ],
         "functions": [
           {
@@ -87,9 +84,6 @@
       {
         "name": "google-vision-text-detection",
         "moduleName": "google_vision_text_detection",
-        "initParams": {
-          "integration_name": ""
-        },
         "secrets": [],
         "runtime": {
           "podType": "regular-xs",

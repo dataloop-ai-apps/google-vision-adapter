@@ -13,7 +13,7 @@ class ServiceRunner(VisionBase):
 
     def web_detection(self, item: dl.Item):
         """
-        Detects and and add to metadata web entities and pages within an image.
+        Detects and add to metadata web entities and pages within an image.
 
         Args:
             item (dl.Item): The item containing the image for logo detection.

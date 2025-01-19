@@ -24,10 +24,10 @@
           "namespace": "google-vision-face-detection.google_vision_face_detection.face_detection"
         },
         "name": "Face Detection",
-        "categories": ["Google Vision"],
+        "categories": ["image-utils"],
         "displayName": "Face Detection",
         "description": "Detects faces in the image",
-        "scope": "node",
+        "scope": "project",
         "configuration": {
           "fields": [
             {
@@ -57,11 +57,8 @@
         "name": "google_vision_face_detection",
         "entryPoint": "google_vision/face_detection/face_detection.py",
         "className": "ServiceRunner",
-        "initInputs": [
-          {
-            "type": "String",
-            "name": "integration_name"
-          }
+        "integrations": [
+          "dl-gcp-service-account"
         ],
         "functions": [
           {
@@ -87,9 +84,6 @@
       {
         "name": "google-vision-face-detection",
         "moduleName": "google_vision_face_detection",
-        "initParams": {
-          "integration_name": ""
-        },
         "secrets": [],
         "runtime": {
           "podType": "regular-xs",

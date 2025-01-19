@@ -16,18 +16,15 @@ class VisionBase(dl.BaseServiceRunner):
         vision_client (vision.ImageAnnotatorClient): A client for interacting with the Google Vision API.
     """
 
-    def __init__(self, integration_name):
+    def __init__(self):
         """
         Initializes the ServiceRunner with Google Vision API credentials.
-
-        Args:
-            integration_name (str): The name of the environment variable that contains the Vision API credentials.
         """
         self.logger = logger
         self.logger.info('Initializing Google Vision API client')
-        self.logger.info('Loading credentials from environment variable: {}'.format(integration_name))
-        integration_name = integration_name.replace('-', '_')
-        raw_credentials = os.environ.get(integration_name)
+        raw_credentials = os.environ.get("GCP_SERVICE_ACCOUNT", None)
+        if raw_credentials is None:
+            raise ValueError(f"Missing GCP service account json.")
         try:
             credentials = json.loads(raw_credentials)
         except json.JSONDecodeError:

@@ -24,10 +24,10 @@
           "namespace": "google-vision-web-detection.google_vision_web_detection.web_detection"
         },
         "name": "Web Content Detection",
-        "categories": ["Google Vision"],
+        "categories": ["image-utils"],
         "displayName": "Web Content Detection",
         "description": "Detects web content in the image",
-        "scope": "node",
+        "scope": "project",
         "configuration": {
           "fields": [
             {
@@ -57,11 +57,8 @@
         "name": "google_vision_web_detection",
         "entryPoint": "google_vision/web_entities_and_pages/web_entities_and_pages.py",
         "className": "ServiceRunner",
-        "initInputs": [
-          {
-            "type": "String",
-            "name": "integration_name"
-          }
+        "integrations": [
+          "dl-gcp-service-account"
         ],
         "functions": [
           {
@@ -87,9 +84,6 @@
       {
         "name": "google-vision-web-detection",
         "moduleName": "google_vision_web_detection",
-        "initParams": {
-          "integration_name": ""
-        },
         "secrets": [],
         "runtime": {
           "podType": "regular-xs",

@@ -24,10 +24,10 @@
           "namespace": "google-vision-label-detection.google_vision_label_detection.label_detection"
         },
         "name": "Label Detection",
-        "categories": ["Google Vision"],
+        "categories": ["image-utils"],
         "displayName": "Label Detection",
         "description": "Detects labels for the image",
-        "scope": "node",
+        "scope": "project",
         "configuration": {
           "fields": [
             {
@@ -57,11 +57,8 @@
         "name": "google_vision_label_detection",
         "entryPoint": "google_vision/label_detection/label_detection.py",
         "className": "ServiceRunner",
-        "initInputs": [
-          {
-            "type": "String",
-            "name": "integration_name"
-          }
+        "integrations": [
+          "dl-gcp-service-account"
         ],
         "functions": [
           {
@@ -87,9 +84,6 @@
       {
         "name": "google-vision-label-detection",
         "moduleName": "google_vision_label_detection",
-        "initParams": {
-          "integration_name": ""
-        },
         "secrets": [],
         "runtime": {
           "podType": "regular-xs",

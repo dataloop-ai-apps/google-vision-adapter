@@ -24,10 +24,10 @@
           "namespace": "google-vision-object-detection.google_vision_object_detection.obj_detection"
         },
         "name": "Object Detection",
-        "categories": ["Google Vision"],
+        "categories": ["image-utils"],
         "displayName": "Object Detection",
         "description": "Detects objects in the image",
-        "scope": "node",
+        "scope": "project",
         "configuration": {
           "fields": [
             {
@@ -57,11 +57,8 @@
         "name": "google_vision_object_detection",
         "entryPoint": "google_vision/object_detection/object_detection.py",
         "className": "ServiceRunner",
-        "initInputs": [
-          {
-            "type": "String",
-            "name": "integration_name"
-          }
+        "integrations": [
+          "dl-gcp-service-account"
         ],
         "functions": [
           {
@@ -87,9 +84,6 @@
       {
         "name": "google-vision-object-detection",
         "moduleName": "google_vision_object_detection",
-        "initParams": {
-          "integration_name": ""
-        },
         "runtime": {
           "podType": "regular-xs",
           "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/google_vision:0.4.0",
