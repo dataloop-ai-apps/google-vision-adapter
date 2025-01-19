@@ -57,11 +57,8 @@
         "name": "google_vision_object_detection",
         "entryPoint": "google_vision/object_detection/object_detection.py",
         "className": "ServiceRunner",
-        "initInputs": [
-          {
-            "type": "String",
-            "name": "integration_name"
-          }
+        "integrations": [
+          "dl-gcp-service-account"
         ],
         "functions": [
           {

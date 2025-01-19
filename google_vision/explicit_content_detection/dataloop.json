@@ -57,11 +57,8 @@
         "name": "google_vision_explicit_detection",
         "entryPoint": "google_vision/explicit_content_detection/explicit_content_detection.py",
         "className": "ServiceRunner",
-        "initInputs": [
-          {
-            "type": "String",
-            "name": "integration_name"
-          }
+        "integrations": [
+          "dl-gcp-service-account"
         ],
         "functions": [
           {

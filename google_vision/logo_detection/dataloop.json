@@ -57,11 +57,8 @@
         "name": "google_vision_logo_detection",
         "entryPoint": "google_vision/logo_detection/logo_detection.py",
         "className": "ServiceRunner",
-        "initInputs": [
-          {
-            "type": "String",
-            "name": "integration_name"
-          }
+        "integrations": [
+          "dl-gcp-service-account"
         ],
         "functions": [
           {

@@ -1,56 +1,82 @@
-<p align="middle">
-  <img height="40mm" src="https://dataloop.ai/wp-content/uploads/2020/03/logo.svg">
-</p>
+# Google Vision Adapter
 
-## Pipeline library application for Google Vision Functions
+This repository provides an integration between **Dataloop** and the **Google Vision** API.
 
 ---
 
-<p align="left">
-  
-  <img src="assets/pipeline_node.png">
+## Overview
 
-![versions](https://img.shields.io/pypi/pyversions/dtlpy.svg)
+- **Purpose**  
+  Acts as an adapter that allows images or other media to be sent to the Google Vision API for analysis, inside a Dataloop pipeline node. It then returns structured results, such as labels, bounding boxes, recognized text, and more.
 
-</p>
+- **Technology Stack**  
+  - **Python**
+  - **Google Cloud Vision**
 
 ---
 
-## Description
+## Google Vision Functions Used
 
-Application for the Dataloop custom Pipeline nodes feature.
+Below is a list of the main Google Vision detection nodes:
 
-The Application allows access to more pipeline nodes that can be used in the pipeline.
+1. **Text Detection**  
+   *Detects and extracts text from an image. Returns the recognized text along with bounding boxes for each piece of identified text.*
 
-The application gives a variety of nodes created from Google Vision Functions, where every function is separate node. List of the nodes:
+2. **Label Detection**  
+   *Detects and extracts information about entities in an image, across a broad group of categories. Returns different labels found.*
 
-- [detect crop hints](google_vision/crop_hint/crop_hint.py)
-- [explicit content detection](google_vision/explicit_content_detection/explicit_content_detection.py)
-- [face detection](google_vision/face_detection/face_detection.py)
-- [label detection](google_vision/label_detection/label_detection.py)
-- [logo detection](google_vision/logo_detection/logo_detection.py)
-- [object detection](google_vision/object_detection/object_detection.py)
-- [text detection](google_vision/text_detection/text_detection.py)
-- [web entities and pages detection](google_vision/web_entities_and_pages/web_entities_and_pages.py)
+3. **Face Detection**  
+   *Detects human faces within an image. Returns bounding boxes for each face and can include additional attributes (e.g., likelihood of joy, sorrow, anger, and surprise).*
 
-## Installations
+4. **Logo Detection**  
+   *Identifies logos from well-known brands within the image. Returns bounding boxes and the corresponding brand names for each detected logo.*
 
-- Clone the repository
+5. **Object Detection**  
+   *Performs object localization, returning bounding boxes and classification labels for each recognized object in the image.*
 
-- Publishing the app:
+6. **Explicit Content Detection**  
+   *Evaluates the image for explicit or sensitive content (e.g., adult, racy, violence). Returns labels of explicit content found.*
 
-`dlp app publish --project-name "<PROJECT_NAME>"`
+7. **Web Detection**  
+   *Detects and add to metadata web entities and pages found within an image.*
 
-- To install for a project:
+8. **Crop Hints**  
+   *Handles image cropping using Google Vision crop hints. Return cropped image.*
 
-`dlp app install --dpk-id "<DPK ID>" --project-name "<PROJECT_NAME>"`
+---
+## Setting Up Your GCP Project
 
-## UI Usage:
+To use these nodes, you need a Google Cloud Platform (GCP) project. Follow these steps to get started:
 
-  <img src="assets/set_up_pipeline.gif">
+### 1. Enable the Cloud Vision AI API
+   - Navigate to the [Cloud Vision API](https://console.developers.google.com/apis/api/vision.googleapis.com) in the GCP Console.
+   - Enable the Cloud Vision AI API.
 
-## Add secrets and add them to pipeline node
+### 2. Create a GCP [Service Account](https://docs.dataloop.ai/docs/private-key-integration?highlight=create%20service%20account)
+   - Go to the IAM & Admin section in the GCP Console.
+   - Create a new service account.
+   - Generate a new key and download the service account JSON file.
 
-Init parameter have to have same name as secrets name.
+## Integrating Google Cloud Vision AI API with Dataloop Platform
 
-<img src="assets/secrets_config.gif">
+### 1. Install the relevant pipeline node
+   - Visit the [Dataloop Marketplace](https://docs.dataloop.ai/docs/marketplace), under Applications tab.
+   - Install the desired application.
+
+### 2. Create the Integration in Data Governance
+   - Go to the [Data Governance](https://docs.dataloop.ai/docs/overview-1?highlight=data%20governance) section in the Dataloop platform.
+   - Click on "Create Integration".
+   - Choose an integration name, select "GCP" as the provider, and "Private Key" as the integration type.
+   - Import the service account JSON file you previously downloaded.
+
+### 3. Add the Integration to the application's [Service Configuration](https://docs.dataloop.ai/docs/service-runtime#secrets-for-faas)
+
+- Create a new pipeline, add the relevant node under the category 'Google Vision'.
+
+- Click on the node, and edit its service settings by clicking on the "Actions" button.
+
+- Under "Integrations", you can add the integration you previously created.
+
+---
+
+For additional assistance or inquiries, please refer to the Dataloop documentation or contact support.
