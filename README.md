@@ -59,23 +59,17 @@ To use these nodes, you need a Google Cloud Platform (GCP) project. Follow these
 
 ## Integrating Google Cloud Vision AI API with Dataloop Platform
 
-### 1. Install the relevant pipeline node
    - Visit the [Dataloop Marketplace](https://docs.dataloop.ai/docs/marketplace), under Applications tab.
-   - Install the desired application.
+   - Select the application and click on "Install" and then "Proceed".
+![Marketplace](assets/marketplace.png)
+   - Select an existing GCP integration or add a new one by importing the JSON file you previously downloaded.
+![Create Integration](assets/add_integration.png)
+   - Install the application.
+![Integration](assets/add_integration_to_app.png)
 
-### 2. Create the Integration in Data Governance
-   - Go to the [Data Governance](https://docs.dataloop.ai/docs/overview-1?highlight=data%20governance) section in the Dataloop platform.
-   - Click on "Create Integration".
-   - Choose an integration name, select "GCP" as the provider, and "Private Key" as the integration type.
-   - Import the service account JSON file you previously downloaded.
-
-### 3. Add the Integration to the application's [Service Configuration](https://docs.dataloop.ai/docs/service-runtime#secrets-for-faas)
-
-- Create a new pipeline, add the relevant node under the category 'Google Vision'.
-
-- Click on the node, and edit its service settings by clicking on the "Actions" button.
-
-- Under "Integrations", you can add the integration you previously created.
+## Use the application in a pipeline
+   - After installing the application, you can use the relevant node in a pipeline under the category 'Google Vision'.
+![Pipeline](assets/pipeline.png)
 
 ---
 
