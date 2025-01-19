@@ -24,10 +24,10 @@
           "namespace": "google-vision-object-detection.google_vision_object_detection.obj_detection"
         },
         "name": "Object Detection",
-        "categories": ["Google Vision"],
+        "categories": ["image-utils"],
         "displayName": "Object Detection",
         "description": "Detects objects in the image",
-        "scope": "node",
+        "scope": "project",
         "configuration": {
           "fields": [
             {

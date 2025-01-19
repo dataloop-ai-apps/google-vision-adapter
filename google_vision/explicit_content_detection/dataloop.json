@@ -24,10 +24,10 @@
           "namespace": "google-vision-explicit-detection.google_vision_explicit_detection.explicit_content_detection"
         },
         "name": "Explicit Content Detection",
-        "categories": ["Google Vision"],
+        "categories": ["image-utils"],
         "displayName": "Explicit Content Detection",
         "description": "Detects content in the image",
-        "scope": "node",
+        "scope": "project",
         "configuration": {
           "fields": [
             {

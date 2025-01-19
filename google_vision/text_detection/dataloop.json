@@ -24,10 +24,10 @@
           "namespace": "google-vision-text-detection.google_vision_text_detection.text_detection"
         },
         "name": "Text Detection",
-        "categories": ["Google Vision"],
+        "categories": ["image-utils"],
         "displayName": "Text Detection",
         "description": "Detects text in the image",
-        "scope": "node",
+        "scope": "project",
         "configuration": {
           "fields": [
             {

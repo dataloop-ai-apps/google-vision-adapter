@@ -24,10 +24,10 @@
           "namespace": "google-vision-face-detection.google_vision_face_detection.face_detection"
         },
         "name": "Face Detection",
-        "categories": ["Google Vision"],
+        "categories": ["image-utils"],
         "displayName": "Face Detection",
         "description": "Detects faces in the image",
-        "scope": "node",
+        "scope": "project",
         "configuration": {
           "fields": [
             {

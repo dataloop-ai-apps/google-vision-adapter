@@ -24,10 +24,10 @@
           "namespace": "google-vision-label-detection.google_vision_label_detection.label_detection"
         },
         "name": "Label Detection",
-        "categories": ["Google Vision"],
+        "categories": ["image-utils"],
         "displayName": "Label Detection",
         "description": "Detects labels for the image",
-        "scope": "node",
+        "scope": "project",
         "configuration": {
           "fields": [
             {
