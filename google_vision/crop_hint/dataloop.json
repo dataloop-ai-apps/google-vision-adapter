@@ -132,9 +132,6 @@
       {
         "name": "google-vision-crop-hint",
         "moduleName": "google_vision_crop_hint",
-        "initParams": {
-          "integration_name": ""
-        },
         "secrets": [],
         "runtime": {
           "podType": "regular-xs",

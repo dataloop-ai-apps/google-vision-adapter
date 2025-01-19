@@ -84,9 +84,6 @@
       {
         "name": "google-vision-explicit-detection",
         "moduleName": "google_vision_explicit_detection",
-        "initParams": {
-          "integration_name": ""
-        },
         "secrets": [],
         "runtime": {
           "podType": "regular-xs",

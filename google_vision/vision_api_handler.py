@@ -19,9 +19,6 @@ class VisionBase(dl.BaseServiceRunner):
     def __init__(self):
         """
         Initializes the ServiceRunner with Google Vision API credentials.
-
-        Args:
-            integration_name (str): The name of the environment variable that contains the Vision API credentials.
         """
         self.logger = logger
         self.logger.info('Initializing Google Vision API client')

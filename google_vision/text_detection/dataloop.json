@@ -84,9 +84,6 @@
       {
         "name": "google-vision-text-detection",
         "moduleName": "google_vision_text_detection",
-        "initParams": {
-          "integration_name": ""
-        },
         "secrets": [],
         "runtime": {
           "podType": "regular-xs",

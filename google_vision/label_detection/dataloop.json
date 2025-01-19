@@ -84,9 +84,6 @@
       {
         "name": "google-vision-label-detection",
         "moduleName": "google_vision_label_detection",
-        "initParams": {
-          "integration_name": ""
-        },
         "secrets": [],
         "runtime": {
           "podType": "regular-xs",

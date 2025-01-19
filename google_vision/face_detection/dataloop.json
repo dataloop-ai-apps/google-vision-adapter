@@ -84,9 +84,6 @@
       {
         "name": "google-vision-face-detection",
         "moduleName": "google_vision_face_detection",
-        "initParams": {
-          "integration_name": ""
-        },
         "secrets": [],
         "runtime": {
           "podType": "regular-xs",

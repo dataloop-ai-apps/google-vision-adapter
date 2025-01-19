@@ -84,9 +84,6 @@
       {
         "name": "google-vision-web-detection",
         "moduleName": "google_vision_web_detection",
-        "initParams": {
-          "integration_name": ""
-        },
         "secrets": [],
         "runtime": {
           "podType": "regular-xs",

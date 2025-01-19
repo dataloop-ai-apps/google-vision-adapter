@@ -84,9 +84,6 @@
       {
         "name": "google-vision-logo-detection",
         "moduleName": "google_vision_logo_detection",
-        "initParams": {
-          "integration_name": ""
-        },
         "secrets": [],
         "runtime": {
           "podType": "regular-xs",

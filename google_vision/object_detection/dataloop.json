@@ -84,9 +84,6 @@
       {
         "name": "google-vision-object-detection",
         "moduleName": "google_vision_object_detection",
-        "initParams": {
-          "integration_name": ""
-        },
         "runtime": {
           "podType": "regular-xs",
           "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/google_vision:0.4.0",
