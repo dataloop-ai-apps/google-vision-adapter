@@ -25,12 +25,15 @@ class VisionBase(dl.BaseServiceRunner):
         raw_credentials = os.environ.get("GCP_SERVICE_ACCOUNT", None)
         if raw_credentials is None:
             raise ValueError(f"Missing GCP service account json.")
+
         try:
-            credentials = json.loads(raw_credentials)
-        except json.JSONDecodeError:
             decoded_credentials = base64.b64decode(raw_credentials).decode("utf-8")
             credentials_json = json.loads(decoded_credentials)
             credentials = json.loads(credentials_json['content'])
+        except Exception:
+            raise ValueError(f"Failed to decode the service account json. "
+                             f"Follow this link ReadMe to check how to properly use GCP service account with Dataloop:"
+                             f"https://github.com/dataloop-ai-apps/google-vision-adapter/blob/main/README.md")
 
         self.vision_client = vision.ImageAnnotatorClient.from_service_account_info(credentials)
 
