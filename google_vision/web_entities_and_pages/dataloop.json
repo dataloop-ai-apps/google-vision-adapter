@@ -3,7 +3,7 @@
   "name": "google-vision-web-detection",
   "description": "Web Detection detects Web references to an image. Requires GCS Integration in Dataloop, Refer to Data Governance for more information",
   "scope": "public",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "attributes": {
     "Provider": "Google",
     "Category": "Application",
@@ -14,7 +14,7 @@
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/google-vision-adapter.git",
-    "gitTag": "0.1.5"
+    "gitTag": "0.1.6"
   },
   "components": {
     "pipelineNodes": [
