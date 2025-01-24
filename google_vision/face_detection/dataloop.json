@@ -24,7 +24,7 @@
           "namespace": "google-vision-face-detection.google_vision_face_detection.face_detection"
         },
         "name": "Face Detection",
-        "categories": ["image-utils"],
+        "categories": ["GoogleVision"],
         "displayName": "Face Detection",
         "description": "Detects faces in the image",
         "scope": "project",

@@ -24,7 +24,7 @@
           "namespace": "google-vision-web-detection.google_vision_web_detection.web_detection"
         },
         "name": "Web Content Detection",
-        "categories": ["image-utils"],
+        "categories": ["GoogleVision"],
         "displayName": "Web Content Detection",
         "description": "Detects web content in the image",
         "scope": "project",

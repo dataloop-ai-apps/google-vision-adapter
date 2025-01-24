@@ -24,7 +24,7 @@
           "namespace": "google-vision-crop-hint.google_vision_crop_hint.crop_hint"
         },
         "name": "Crop Hint",
-        "categories": ["image-utils"],
+        "categories": ["GoogleVision"],
         "displayName": "Crop Hint",
         "description": "Crop Image using hint from Google Vision based on ratio(width:height)",
         "scope": "project",
