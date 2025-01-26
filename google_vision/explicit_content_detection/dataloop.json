@@ -24,7 +24,7 @@
           "namespace": "google-vision-explicit-detection.google_vision_explicit_detection.explicit_content_detection"
         },
         "name": "Explicit Content Detection",
-        "categories": ["image-utils"],
+        "categories": ["Google Vision"],
         "displayName": "Explicit Content Detection",
         "description": "Detects content in the image",
         "scope": "project",

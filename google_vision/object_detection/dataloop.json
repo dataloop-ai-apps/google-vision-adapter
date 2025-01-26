@@ -24,7 +24,7 @@
           "namespace": "google-vision-object-detection.google_vision_object_detection.obj_detection"
         },
         "name": "Object Detection",
-        "categories": ["image-utils"],
+        "categories": ["Google Vision"],
         "displayName": "Object Detection",
         "description": "Detects objects in the image",
         "scope": "project",
