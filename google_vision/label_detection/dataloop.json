@@ -24,7 +24,7 @@
           "namespace": "google-vision-label-detection.google_vision_label_detection.label_detection"
         },
         "name": "Label Detection",
-        "categories": ["GoogleVision"],
+        "categories": ["google-vision"],
         "displayName": "Label Detection",
         "description": "Detects labels for the image",
         "scope": "project",
