@@ -68,7 +68,7 @@ To use these nodes, you need a Google Cloud Platform (GCP) project. Follow these
 ![Integration](assets/add_integration_to_app.png)
 
 ## Use the application in a pipeline
-   - After installing the application, you can use the relevant node in a pipeline under the category 'GoogleVision'.
+   - After installing the application, you can use the relevant node in a pipeline under the category 'Google Vision'.
 ![Pipeline](assets/pipeline.png)
 
 ---
