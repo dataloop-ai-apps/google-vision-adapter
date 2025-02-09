@@ -67,9 +67,34 @@ To use these nodes, you need a Google Cloud Platform (GCP) project. Follow these
    - Install the application.
 ![Integration](assets/add_integration_to_app.png)
 
+
 ## Use the application in a pipeline
    - After installing the application, you can use the relevant node in a pipeline under the category 'Google Vision'.
 ![Pipeline](assets/pipeline.png)
+
+## License
+
+The code in this repository is licensed under the [Apache License 2.0](LICENSE).
+
+### Attributions & Disclaimer
+
+This repository provides an integration between **Dataloop** and the **Google Vision API**. It acts as an adapter that allows images or other media to be sent to the Google Vision API for analysis within a **Dataloop pipeline node**. 
+
+This repository is **not affiliated with Google**. It provides an adapter for Google Vision API, but does not include or distribute any proprietary Google code or intellectual property.
+
+While the code in this repository is open-sourced under the **Apache License 2.0**, the **use of the Google Vision API is subject to Google's licensing terms**, including:
+
+- [Google Cloud Platform Terms of Service](https://cloud.google.com/terms)
+- [Google Vision API Pricing & Usage Terms](https://cloud.google.com/vision/pricing)
+
+This application is provided **"as is"** under the terms of the **Apache License 2.0**. Dataloop makes no warranties or guarantees regarding its performance, functionality, or legal compliance when used with the Google Vision API.
+
+### Additional Resources
+
+For more information about the **Google Vision API**, please visit:
+- [Google Vision API Overview](https://cloud.google.com/vision)
+- [Google Vision API Documentation](https://cloud.google.com/vision/docs)
+- [Google Vision API Pricing](https://cloud.google.com/vision/pricing)
 
 ---
 
