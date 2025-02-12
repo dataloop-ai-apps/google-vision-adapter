@@ -1,19 +1,42 @@
-import dtlpy as dl
 from google.cloud import vision
-from google_vision.vision_api_handler import VisionBase
-import cv2
+import dtlpy as dl
 import tempfile
+import logging
+import base64
+import json
 import os
+import cv2
 
+logger = logging.getLogger(name='google-vision')
 
-class ServiceRunner(VisionBase):
+class ServiceRunner(dl.BaseServiceRunner):
     """
     ServiceRunner handles image cropping using Google Vision API's crop hints.
 
     Attributes:
         vision_client (vision.ImageAnnotatorClient): Client for Google Vision API.
     """
+    def __init__(self):
+        """
+        Initializes the ServiceRunner with Google Vision API credentials.
+        """
+        self.logger = logger
+        self.logger.info('Initializing Google Vision API client')
+        raw_credentials = os.environ.get("GCP_SERVICE_ACCOUNT", None)
+        if raw_credentials is None:
+            raise ValueError(f"Missing GCP service account json.")
 
+        try:
+            decoded_credentials = base64.b64decode(raw_credentials).decode("utf-8")
+            credentials_json = json.loads(decoded_credentials)
+            credentials = json.loads(credentials_json['content'])
+        except Exception:
+            raise ValueError("Unable to decode the service account JSON. "
+                             "Please refer to the following guide for proper usage of GCP service accounts with "
+                             "Dataloop: https://github.com/dataloop-ai-apps/google-vision-adapter/blob/main/README.md")
+
+        self.vision_client = vision.ImageAnnotatorClient.from_service_account_info(credentials)
+        
     def crop_hint(self, item: dl.Item, context: dl.Context):
         """
         Detects crop hints in an image and creates a new cropped image.
