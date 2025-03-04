@@ -6,10 +6,10 @@
   "version": "0.1.7",
   "attributes": {
     "Provider": "Google",
-    "Category": "Application",
+    "Category": "Model",
     "Deployed By": "Google",
     "Media Type": ["Image"],
-    "Application Type": ["Pipeline Node"]
+    "Computer Vision": ["Object Detection", "Classification"]
   },
   "codebase": {
     "type": "git",
