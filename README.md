@@ -17,7 +17,7 @@ This repository provides an integration between **Dataloop** and the **Google Vi
 
 ## Google Vision Functions Used
 
-Below is a list of the main Google Vision detection nodes:
+Below is a list of the Google Vision detection models avaliable on Dataloop's Marketplace:
 
 1. **Text Detection**  
    *Detects and extracts text from an image. Returns the recognized text along with bounding boxes for each piece of identified text.*
@@ -39,6 +39,9 @@ Below is a list of the main Google Vision detection nodes:
 
 7. **Web Detection**  
    *Detects and add to metadata web entities and pages found within an image.*
+
+
+Avaliable as a pipeline node:
 
 8. **Crop Hints**  
    *Handles image cropping using Google Vision crop hints. Return cropped image.*
