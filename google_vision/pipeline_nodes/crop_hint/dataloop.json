@@ -103,7 +103,7 @@
     "modules": [
       {
         "name": "google_vision_crop_hint",
-        "entryPoint": "google_vision/crop_hint/crop_hint.py",
+        "entryPoint": "google_vision/pipeline_nodes/crop_hint/crop_hint.py",
         "className": "ServiceRunner",
         "integrations": [
           "dl-gcp-service-account"
