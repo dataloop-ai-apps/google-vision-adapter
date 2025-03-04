@@ -47,6 +47,12 @@
         "integrations": [
           "dl-gcp-service-account"
         ],
+        "initInputs": [
+          {
+            "type": "Model",
+            "name": "model_entity"
+          }
+        ],
         "functions":[
           {
             "name": "predict_items",
