@@ -114,7 +114,15 @@ class ServiceRunner(dl.BaseServiceRunner):
         cropped_image_path = f'{name}_cropped_w_{width}_h_{height}.jpg'
         file_path = os.path.join(temp_items_path, cropped_image_path)
         cv2.imwrite(file_path, cropped_image)
-        remote_path = '/'.join(item.filename.split('/')[:-1])
+        # Handling cropped items remote path
+        item_remote_path = item.filename.split('/')[:-1]
+        # Check if item_remote_path is empty or contains only an empty string
+        if not item_remote_path or item_remote_path == ['']:
+            remote_path = '/'
+        else:
+            remote_path = '/'.join(item_remote_path)
+        remote_path = f"{remote_path}/cropped_items" if remote_path != '/' else '/cropped_items'
+        
         crop_item = item.dataset.items.upload(local_path=file_path, remote_path=remote_path)
         self.logger.info('Cropped image saved and uploaded.')
         return crop_item

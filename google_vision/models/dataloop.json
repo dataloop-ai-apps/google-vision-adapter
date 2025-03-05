@@ -98,7 +98,7 @@
     ],
     "models": [
       {
-        "name": "explicit_content_detection",
+        "name": "explicit-content-detection",
         "moduleName": "google_vision_models",
         "scope": "project",
         "status": "pre-trained",

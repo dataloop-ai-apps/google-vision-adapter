@@ -40,6 +40,9 @@ Below is a list of the Google Vision detection models avaliable on Dataloop's Ma
 7. **Web Detection**  
    *Detects and add to metadata web entities and pages found within an image.*
 
+### Models Configurations:
+For each model, the vision type is defined in the model configuration.
+The likelihood threshold can be configured for explicit content detection models, for more information about this option refer to the [Detect explicit content (SafeSearch)](https://cloud.google.com/vision/docs/detecting-safe-search).
 
 Avaliable as a pipeline node:
 
