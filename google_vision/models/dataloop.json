@@ -7,7 +7,7 @@
   "attributes": {
     "Provider": "Google",
     "Category": "Model",
-    "Deployed By": "Google",
+    "Deployed By": "Dataloop",
     "Media Type": ["Image"],
     "Computer Vision": ["Object Detection", "Classification"]
   },
@@ -20,30 +20,25 @@
     "computeConfigs": [
       {
         "name": "google-vision-models",
-        "moduleName": "google_vision_models",
-        "secrets": [],
         "runtime": {
           "podType": "regular-xs",
           "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/google_vision:0.4.0",
-          "numReplicas": 1,
           "concurrency": 10,
-          "singleAgent": false,
           "autoscaler": {
             "type": "rabbitmq",
             "minReplicas": 0,
-            "maxReplicas": 2,
-            "queueLength": 10
-          },
-          "preemptible": false
-        },
-        "operation": "none"
+            "maxReplicas": 2
+          }
+        }
       }
     ],
     "modules": [
       {
         "name": "google_vision_models",
         "entryPoint": "google_vision/models/model_adapter.py",
+        "computeConfig": "google-vision-models",
         "className": "ModelAdapter",
+        "description": "Google Vision Models Module",
         "integrations": [
           "dl-gcp-service-account"
         ],

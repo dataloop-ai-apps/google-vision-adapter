@@ -29,15 +29,15 @@ class ModelAdapter(dl.BaseModelAdapter):
         try:
             decoded_credentials = base64.b64decode(raw_credentials).decode("utf-8")
             credentials_json = json.loads(decoded_credentials)
-            # credentials = json.loads(credentials_json['content'])
-        except (json.JSONDecodeError, UnicodeDecodeError, base64.binascii.Error):
+            credentials = json.loads(credentials_json['content'])
+        except (json.JSONDecodeError, UnicodeDecodeError, base64.binascii.Error) as exc:
             raise ValueError(
                 "Unable to decode the service account JSON. "
                 "Please refer to the following guide for proper usage of GCP service accounts with "
                 "Dataloop: https://github.com/dataloop-ai-apps/google-vision-adapter/blob/main/README.md"
-            )
+            ) from exc
 
-        self.vision_client = vision.ImageAnnotatorClient.from_service_account_info(credentials_json)
+        self.vision_client = vision.ImageAnnotatorClient.from_service_account_info(credentials)
 
     def prepare_item_func(self, item):
         """
