@@ -35,7 +35,7 @@
     "modules": [
       {
         "name": "google_vision_models",
-        "entryPoint": "google_vision/models/model_adapter.py",
+        "entryPoint": "models/model_adapter.py",
         "computeConfig": "google-vision-models",
         "className": "ModelAdapter",
         "description": "Google Vision Models Module",
