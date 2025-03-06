@@ -98,6 +98,18 @@
     ],
     "models": [
       {
+        "name": "crop-hint",
+        "moduleName": "google_vision_models",
+        "scope": "project",
+        "status": "pre-trained",
+        "configuration": {
+          "vision_type": "crop_hint",
+          "width": 1,
+          "height": 1
+        },
+        "description": "Crop Hints suggests vertices for a crop region on an image."
+      },
+      {
         "name": "explicit-content-detection",
         "moduleName": "google_vision_models",
         "scope": "project",
@@ -106,7 +118,7 @@
           "vision_type": "explicit_content",
           "likelihood_threshold":0
         },
-        "description": "SafeSearch Detection detects explicit content such as adult content or violent content within an image. This feature uses five categories (adult, spoof, medical, violence, and racy) and returns the likelihood that each is present in a given image. Requires GCS Integration in Dataloop, Refer to Data Governance for more information"
+        "description": "SafeSearch Detection detects explicit content such as adult content or violent content within an image. This feature uses five categories (adult, spoof, medical, violence, and racy) and returns the likelihood that each is present in a given image."
       },
       {
         "name": "face-detection",
@@ -116,7 +128,7 @@
         "configuration": {
           "vision_type": "face"
         },
-        "description": "Face Detection detects multiple faces within an image along with the associated key facial attributes such as emotional state or wearing head wear.  Requires GCS Integration in Dataloop, Refer to Data Governance for more information"
+        "description": "Face Detection detects multiple faces within an image along with the associated key facial attributes such as emotional state or wearing head wear."
       },
       {
         "name": "label-detection",
@@ -127,7 +139,7 @@
           "vision_type": "label",
           "likelihood_threshold":0
         },
-        "description": "Label Detection can detect and extract information about entities in an image, across a broad group of categories.  Requires GCS Integration in Dataloop, Refer to Data Governance for more information"
+        "description": "Label Detection can detect and extract information about entities in an image, across a broad group of categories."
       },
       {
         "name": "logo-detection",
@@ -137,7 +149,7 @@
         "configuration": {
           "vision_type": "logo"
         },
-        "description": "Logo Detection detects popular product logos within an image.  Requires GCS Integration in Dataloop, Refer to Data Governance for more information"
+        "description": "Logo Detection detects popular product logos within an image."
       },
       {
         "name": "object-detection",
@@ -147,7 +159,7 @@
         "configuration": {
           "vision_type": "object"
         },
-        "description": "The Vision API can detect and extract multiple objects in an image with Object Localization.  Requires GCS Integration in Dataloop, Refer to Data Governance for more information"
+        "description": "The Vision API can detect and extract multiple objects in an image with Object Localization."
       },
       {
         "name": "text-detection",
@@ -157,7 +169,7 @@
         "configuration": {
           "vision_type": "text"
         },
-        "description": "The Vision API can detect and extract text from images.  Requires GCS Integration in Dataloop, Refer to Data Governance for more information"
+        "description": "The Vision API can detect and extract text from images."
       },
       {
         "name": "web-detection",
@@ -167,7 +179,7 @@
         "configuration": {
           "vision_type": "web_detection"
         },
-        "description": "Web Detection detects Web references to an image. Requires GCS Integration in Dataloop, Refer to Data Governance for more information"
+        "description": "Web Detection detects Web references to an image."
       }
     ]
   }

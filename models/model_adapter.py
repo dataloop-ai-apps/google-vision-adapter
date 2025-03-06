@@ -29,7 +29,7 @@ class ModelAdapter(dl.BaseModelAdapter):
         try:
             decoded_credentials = base64.b64decode(raw_credentials).decode("utf-8")
             credentials_json = json.loads(decoded_credentials)
-            credentials = json.loads(credentials_json['content'])
+            # credentials = json.loads(credentials_json['content'])
         except (json.JSONDecodeError, UnicodeDecodeError, base64.binascii.Error) as exc:
             raise ValueError(
                 "Unable to decode the service account JSON. "
@@ -37,7 +37,7 @@ class ModelAdapter(dl.BaseModelAdapter):
                 "Dataloop: https://github.com/dataloop-ai-apps/google-vision-adapter/blob/main/README.md"
             ) from exc
 
-        self.vision_client = vision.ImageAnnotatorClient.from_service_account_info(credentials)
+        self.vision_client = vision.ImageAnnotatorClient.from_service_account_info(credentials_json)
 
     def prepare_item_func(self, item):
         """
@@ -186,6 +186,48 @@ class ModelAdapter(dl.BaseModelAdapter):
 
         return item_annotation
 
+    def crop_hint(self, image, item: dl.Item, item_annotation: dl.AnnotationCollection):
+        """
+        Detects crop hints in an image and creates a new cropped image.
+
+        Args:
+            item (dl.Item): The item containing the image.
+            context (dl.Context): The execution context coming from pipeline node.
+
+        Returns:
+            dl.Item: The item with the cropped image.
+        """
+        self.logger.info("Starting crop hint detection.")
+
+        width = self.configuration.get("width", 1)
+        height = self.configuration.get("height", 1)
+        ratio = width / height
+        ratio = round(ratio, 2)
+        self.logger.info(f"Using crop ratio: {ratio}")
+
+        # Perform crop hint detection
+        crop_hints_params = vision.CropHintsParams(aspect_ratios=[ratio])
+        image_context = vision.ImageContext(crop_hints_params=crop_hints_params)
+        response = self.vision_client.crop_hints(image=image, image_context=image_context)
+        crop_hints = response.crop_hints_annotation.crop_hints
+        points = crop_hints[0].bounding_poly.vertices
+
+        item_annotation.add(
+            dl.Box(
+                left=max(points[0].x, 0),
+                top=max(points[0].y, 0),
+                bottom=min(points[2].y, item.height),
+                right=min(points[2].x, item.width),
+                label="Cropped Hint",
+                description="cropped_hint",
+            ),
+            model_info={"name": self.model_entity.name, 
+                        "model_id": self.model_entity.id, 
+                        "confidence": crop_hints[0].confidence},
+        )
+
+        return item_annotation
+
     def predict(self, batch, **kwargs):
         batch_annotations = list()
         vision_type = self.configuration.get("vision_type")
@@ -194,6 +236,13 @@ class ModelAdapter(dl.BaseModelAdapter):
 
         for item, image in batch:
             item_annotation = dl.AnnotationCollection()
+
+            #############
+            # Crop Hint #
+            #############
+
+            if vision_type == "crop_hint":
+                annotations = self.crop_hint(image=image, item=item, item_annotation=item_annotation)
 
             ##################
             # Classification #
@@ -243,3 +292,4 @@ class ModelAdapter(dl.BaseModelAdapter):
             batch_annotations.append(annotations)
 
         return batch_annotations
+
