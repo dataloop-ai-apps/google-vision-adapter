@@ -1,23 +1,13 @@
 # Google Vision Adapter
 
 This repository provides an integration between **Dataloop** and the **Google Vision** API.
-
----
-
-## Overview
-
-- **Purpose**  
-  Acts as an adapter that allows images or other media to be sent to the Google Vision API for analysis, inside a Dataloop pipeline node. It then returns structured results, such as labels, bounding boxes, recognized text, and more.
-
-- **Technology Stack**  
-  - **Python**
-  - **Google Cloud Vision**
+This adapter allows images to be sent to the Google Vision API for analysis, in a Dataloop model. It then returns structured results, such as labels, bounding boxes, recognized text, and more.
 
 ---
 
 ## Google Vision Functions Used
 
-Below is a list of the main Google Vision detection nodes:
+Below is a list of the Google Vision detection models avaliable on Dataloop's Marketplace:
 
 1. **Text Detection**  
    *Detects and extracts text from an image. Returns the recognized text along with bounding boxes for each piece of identified text.*
@@ -39,9 +29,15 @@ Below is a list of the main Google Vision detection nodes:
 
 7. **Web Detection**  
    *Detects and add to metadata web entities and pages found within an image.*
+   **The detection results are added to the image metadata as a list of web entities.**
 
 8. **Crop Hints**  
-   *Handles image cropping using Google Vision crop hints. Return cropped image.*
+   *Handles image cropping using Google Vision crop hints. Return as an annotation the vertices of the crop region.*
+
+### Models Configurations:
+For each model, the vision type is defined in the model configuration.
+The likelihood threshold can be configured for explicit content detection models, for more information about this option refer to the [Detect explicit content (SafeSearch)](https://cloud.google.com/vision/docs/detecting-safe-search).
+For crop hint model, the width and height of the crop region can be configured.
 
 ---
 ## Setting Up Your GCP Project
