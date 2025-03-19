@@ -5,6 +5,8 @@ import base64
 import json
 import os
 
+from jupyter_client.adapter import adapters
+
 logger = logging.getLogger(name="google-vision")
 
 
@@ -83,19 +85,10 @@ class ModelAdapter(dl.BaseModelAdapter):
 
         annotations = getattr(response, annotation_type, [])
         for annotation in annotations:
-            description = None
-
-            label = vision_type
-
-            if vision_type == "text":
-                description = annotation.description
-            elif vision_type == "label":
-                label = annotation.description
-
+            label = annotation.description
             points = annotation.bounding_poly.vertices
 
-            # Text detection doesn't contain confidence
-            # if the model doeant retunn the confidane
+            # if the model doesn't contain confidence
             confidence = round(getattr(annotation, "detection_confidence", 1.0), 3)
             # Add box annotations
             item_annotation.add(
@@ -104,8 +97,7 @@ class ModelAdapter(dl.BaseModelAdapter):
                     top=max(points[0].y, 0),
                     bottom=min(points[2].y, item.height),
                     right=min(points[2].x, item.width),
-                    label=label,
-                    description=description,
+                    label=label
                 ),
                 model_info={"name": self.model_entity.name, "model_id": self.model_entity.id, "confidence": confidence},
             )
@@ -279,9 +271,7 @@ class ModelAdapter(dl.BaseModelAdapter):
                     "face": vision.Feature.Type.FACE_DETECTION,
                 }
                 if vision_type == "logo":
-
                     response = self.vision_client.logo_detection(image=image)
-                    response = response.logo_annotations
                 else:
                     response = self.get_response(image, vision_type_mapping.get(vision_type))
 
@@ -292,4 +282,3 @@ class ModelAdapter(dl.BaseModelAdapter):
             batch_annotations.append(annotations)
 
         return batch_annotations
-

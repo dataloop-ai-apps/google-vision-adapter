@@ -16,7 +16,7 @@ Below is a list of the Google Vision detection models avaliable on Dataloop's Ma
    *Detects and extracts information about entities in an image, across a broad group of categories. Returns different labels found.*
 
 3. **Face Detection**  
-   *Detects human faces within an image. Returns bounding boxes for each face and can include additional attributes (e.g., likelihood of joy, sorrow, anger, and surprise).*
+   *Detects human faces within an image. Returns bounding boxes for each face.*
 
 4. **Logo Detection**  
    *Identifies logos from well-known brands within the image. Returns bounding boxes and the corresponding brand names for each detected logo.*
