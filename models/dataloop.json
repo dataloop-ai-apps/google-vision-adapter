@@ -19,7 +19,7 @@
   "components": {
     "computeConfigs": [
       {
-        "name": "google-vision-models",
+        "name": "google-vision-models-compute",
         "runtime": {
           "podType": "regular-xs",
           "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/google_vision:0.4.0",
@@ -36,7 +36,7 @@
       {
         "name": "google_vision_models",
         "entryPoint": "models/model_adapter.py",
-        "computeConfig": "google-vision-models",
+        "computeConfig": "google-vision-models-compute",
         "className": "ModelAdapter",
         "description": "Google Vision Models Module",
         "integrations": [
