@@ -5,8 +5,6 @@ import base64
 import json
 import os
 
-from jupyter_client.adapter import adapters
-
 logger = logging.getLogger(name="google-vision")
 
 
