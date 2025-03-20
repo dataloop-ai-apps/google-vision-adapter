@@ -83,11 +83,27 @@ class ModelAdapter(dl.BaseModelAdapter):
 
         annotations = getattr(response, annotation_type, [])
         for annotation in annotations:
-            label = annotation.description
+            label = getattr(annotation, "description", vision_type)
             points = annotation.bounding_poly.vertices
-
             # if the model doesn't contain confidence
             confidence = round(getattr(annotation, "detection_confidence", 1.0), 3)
+            annotation_attributes = None
+            if vision_type=='face':
+                # https://cloud.google.com/vision/docs/detecting-faces
+                # Names of likelihood from google.cloud.vision.enums
+                likelihood_name = (
+                    "UNKNOWN",
+                    "VERY_UNLIKELY",
+                    "UNLIKELY",
+                    "POSSIBLE",
+                    "LIKELY",
+                    "VERY_LIKELY",
+                )
+                annotation_attributes = {
+                    "anger": likelihood_name[annotation.anger_likelihood],
+                    "joy": likelihood_name[annotation.joy_likelihood],
+                    "surprise": likelihood_name[annotation.surprise_likelihood]
+                }
             # Add box annotations
             item_annotation.add(
                 dl.Box(
@@ -95,7 +111,8 @@ class ModelAdapter(dl.BaseModelAdapter):
                     top=max(points[0].y, 0),
                     bottom=min(points[2].y, item.height),
                     right=min(points[2].x, item.width),
-                    label=label
+                    label=label,
+                    attributes= annotation_attributes
                 ),
                 model_info={"name": self.model_entity.name, "model_id": self.model_entity.id, "confidence": confidence},
             )
