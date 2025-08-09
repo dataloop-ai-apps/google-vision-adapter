@@ -3,7 +3,7 @@
   "name": "google-vision-models",
   "description": "Google Vision Models - Access via API to Face Detection, Label Detection, Logo Detection, Object Detection, Text Detection, Web Detection as Dataloop Models.",
   "scope": "public",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "attributes": {
     "Provider": "Google",
     "Category": "Model",
@@ -14,7 +14,7 @@
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/google-vision-adapter.git",
-    "gitTag": "0.1.11"
+    "gitTag": "0.1.12"
   },
   "components": {
     "computeConfigs": [
