@@ -22,7 +22,7 @@
         "name": "google-vision-models-compute",
         "runtime": {
           "podType": "regular-xs",
-          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/google_vision:0.4.0",
+          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/apps/google-vision:0.0.1",
           "concurrency": 10,
           "autoscaler": {
             "type": "rabbitmq",
