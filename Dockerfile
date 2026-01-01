@@ -1,12 +1,10 @@
-FROM dataloopai/dtlpy-agent:cpu.py3.8.opencv4.7
+FROM hub.dataloop.ai/dtlpy-runner-images/cpu:python3.10_opencv
 
-USER root
 RUN apt-get update && apt-get install libgl1-mesa-glx -y
-USER 1000
 COPY requirements.txt /tmp
-RUN pip install --user -r /tmp/requirements.txt
+RUN ${DL_PYTHON_EXECUTABLE} -m pip install -r /tmp/requirements.txt
 
 
-# docker build --no-cache -t gcr.io/viewo-g/piper/agent/runner/cpu/google_vision:0.4.0 -f Dockerfile .
-# docker run -it gcr.io/viewo-g/piper/agent/runner/cpu/google_vision:0.4.0 bash
-# docker push gcr.io/viewo-g/piper/agent/runner/cpu/google_vision:0.4.0
+# docker build --no-cache -t gcr.io/viewo-g/piper/agent/runner/apps/google-vision:0.0.1 -f Dockerfile .
+# docker run -it gcr.io/viewo-g/piper/agent/runner/apps/google-vision:0.0.1 bash
+# docker push gcr.io/viewo-g/piper/agent/runner/apps/google-vision:0.0.1
