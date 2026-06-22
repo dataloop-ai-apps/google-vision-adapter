@@ -34,7 +34,7 @@ class ModelAdapter(dl.BaseModelAdapter):
             raise ValueError(
                 "Unable to decode the service account JSON. "
                 "Please refer to the following guide for proper usage of GCP service accounts with "
-                "Dataloop: https://github.com/dataloop-ai-apps/google-vision-adapter/blob/main/README.md"
+                "DDOE: https://github.com/dataloop-ai-apps/google-vision-adapter/blob/main/README.md"
             ) from exc
 
         self.vision_client = vision.ImageAnnotatorClient.from_service_account_info(credentials)
