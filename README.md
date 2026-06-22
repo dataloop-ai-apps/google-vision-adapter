@@ -1,13 +1,13 @@
 # Google Vision Adapter
 
-This repository provides an integration between **Dataloop** and the **Google Vision** API.
-This adapter allows images to be sent to the Google Vision API for analysis, in a Dataloop model. It then returns structured results, such as labels, bounding boxes, recognized text, and more.
+This repository provides an integration between **DDOE** and the **Google Vision** API.
+This adapter allows images to be sent to the Google Vision API for analysis, in a DDOE model. It then returns structured results, such as labels, bounding boxes, recognized text, and more.
 
 ---
 
 ## Google Vision Functions Used
 
-Below is a list of the Google Vision detection models avaliable on Dataloop's Marketplace:
+Below is a list of the Google Vision detection models avaliable on DDOE's Marketplace:
 
 1. **Text Detection**  
    *Detects and extracts text from an image. Returns the recognized text along with bounding boxes for each piece of identified text.*
@@ -53,9 +53,9 @@ To use these nodes, you need a Google Cloud Platform (GCP) project. Follow these
    - Create a new service account.
    - Generate a new key and download the service account JSON file.
 
-## Integrating Google Cloud Vision AI API with Dataloop Platform
+## Integrating Google Cloud Vision AI API with DDOE Platform
 
-   - Visit the [Dataloop Marketplace](https://docs.dataloop.ai/docs/marketplace), under Applications tab.
+   - Visit the [DDOE Marketplace](https://docs.dataloop.ai/docs/marketplace), under Applications tab.
    - Select the application and click on "Install" and then "Proceed".
 ![Marketplace](assets/marketplace.png)
    - Select an existing GCP integration or add a new one by importing the JSON file you previously downloaded.
@@ -74,7 +74,7 @@ The code in this repository is licensed under the [Apache License 2.0](LICENSE).
 
 ### Attributions & Disclaimer
 
-This repository provides an integration between **Dataloop** and the **Google Vision API**. It acts as an adapter that allows images or other media to be sent to the Google Vision API for analysis within a **Dataloop pipeline node**. 
+This repository provides an integration between **DDOE** and the **Google Vision API**. It acts as an adapter that allows images or other media to be sent to the Google Vision API for analysis within a **DDOE pipeline node**. 
 
 This repository is **not affiliated with Google**. It provides an adapter for Google Vision API, but does not include or distribute any proprietary Google code or intellectual property.
 
@@ -83,7 +83,7 @@ While the code in this repository is open-sourced under the **Apache License 2.0
 - [Google Cloud Platform Terms of Service](https://cloud.google.com/terms)
 - [Google Vision API Pricing & Usage Terms](https://cloud.google.com/vision/pricing)
 
-This application is provided **"as is"** under the terms of the **Apache License 2.0**. Dataloop makes no warranties or guarantees regarding its performance, functionality, or legal compliance when used with the Google Vision API.
+This application is provided **"as is"** under the terms of the **Apache License 2.0**. DDOE makes no warranties or guarantees regarding its performance, functionality, or legal compliance when used with the Google Vision API.
 
 ### Additional Resources
 
@@ -94,4 +94,4 @@ For more information about the **Google Vision API**, please visit:
 
 ---
 
-For additional assistance or inquiries, please refer to the Dataloop documentation or contact support.
+For additional assistance or inquiries, please refer to the DDOE documentation or contact support.

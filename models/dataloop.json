@@ -1,13 +1,13 @@
 {
   "displayName": "Google Vision Models",
   "name": "google-vision-models",
-  "description": "Google Vision Models - Access via API to Face Detection, Label Detection, Logo Detection, Object Detection, Text Detection, Web Detection as Dataloop Models.",
+  "description": "Google Vision Models - Access via API to Face Detection, Label Detection, Logo Detection, Object Detection, Text Detection, Web Detection as DDOE Models.",
   "scope": "public",
   "version": "0.1.13",
   "attributes": {
     "Provider": "Google",
     "Category": "Model",
-    "Deployed By": "Dataloop",
+    "Deployed By": "DDOE",
     "Media Type": ["Image"],
     "Computer Vision": ["Object Detection", "Classification"]
   },
@@ -85,7 +85,7 @@
               {
                 "type": "Json",
                 "name": "filters",
-                "description": "Dataloop Filter DQL"
+                "description": "DDOE Filter DQL"
               }
             ],
             "output": [],
